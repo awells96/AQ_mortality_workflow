@@ -56,3 +56,30 @@ def autosize_figure(nrows, ncolumns, scale_factor=1, xscale_factor=1, yscale_fac
     xwidth = (ncolumns+0.67) * 5.0 * scale_factor * xscale_factor
     ylength = (nrows+0.67) * 3.6 * scale_factor * yscale_factor
     return (xwidth, ylength)
+
+
+# === Monthly files don't always have the correct dates ===
+def fix_months(da, expected_start, expected_end, scenario):
+    """Fix time and crop"""
+    expected_dates = xr.date_range(
+        start=expected_start,
+        end=expected_end,
+        freq="MS",
+        calendar="noleap",
+        use_cftime=True
+    )
+
+    if len(da.time) != len(expected_dates):
+        raise ValueError("Time dimension length mismatch with expected range.")
+
+    da["time"] = expected_dates
+
+    # Crop to desired range
+    if scenario == "ARISE":
+        start_date = "2035-01"
+    elif scenario == "SSP245":
+        start_date = "2020-01"
+    else:
+        raise ValueError(f"{scenario} is not known here")
+    da = da.sel(time=slice(start_date, "2069-12"))
+    return da
