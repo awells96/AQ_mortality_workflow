@@ -1,10 +1,11 @@
-# processing_utils.py
-# Common functions used in air_quality_project/processing/
+# utils.py
+# Common functions used in air_quality_project/
 
 # adjust_longitude
 # latitude_weighted_mean
 # land_filter
 # autosize_figure
+# fix_months
 
 import xarray as xr
 import numpy as np
