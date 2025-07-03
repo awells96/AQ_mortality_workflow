@@ -2,7 +2,7 @@
 
 **Baseline Mortality Rate (BMR)**
 
-<ins>Data citations</ins> 
+<ins>Data citations</ins>  
 Global Burden of Disease Collaborative Network.  
 Global Burden of Disease Study 2021 (GBD 2021\) Results.  
 Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2022\.  
@@ -46,7 +46,7 @@ Country and Region masks are derived from country shapefiles from the GBD, as we
 
 **Population Data (POP)**
 
-<ins>Data citations</ins>
+<ins>Data citations</ins>  
 Gao, J. (2017). Downscaling global spatial population projections from 1/8-degree to 1-km grid cells. NCAR Technical Note NCAR/TN-537+STR, National Center for Atmospheric Researcher, Boulder, CO., USA. [DOI: 10.5065/D60Z721H](https://doi.org/10.5065/D60Z721H)  
 [https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TLJ99B](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TLJ99B)
 
@@ -66,7 +66,7 @@ Gao, J. (2017). Downscaling global spatial population projections from 1/8-degre
 
 **Ozone data (X)**
 
-<ins>Data citations</ins>
+<ins>Data citations</ins>  
 *ARISE-SAI-1.5K*  
 Richter, J. H., Visioni, D., MacMartin, D. G., Bailey, D. A., Rosenbloom, N., Dobbins, B., Lee, W. R., Tye, M., and Lamarque, J.-F.: Assessing Responses and Impacts of Solar climate intervention on the Earth system with stratospheric aerosol injection (ARISE-SAI): protocol and initial results from the first simulations, Geosci. Model Dev., 15, 8221–8243, [https://doi.org/10.5194/gmd-15-8221-2022](https://doi.org/10.5194/gmd-15-8221-2022), 2022\. 
 
@@ -116,7 +116,7 @@ AF(x,y) \= \frac{RR(x,y) - 1}{RR(x,y)}
 
 RR(x,y) \= e^{(X-TMREL)}
 
-<ins>Notes</ins>
+<ins>Notes</ins>  
 When calculating mortality there are a few caveats that need to be addressed:
 
 - The BMR is calculated as an average from 1990-2009 and used for the future projections. Whilst this could over or underestimate total mortality due to changes in demographics or health care in the future, it could reduce uncertainty in the projections of BMR.   
