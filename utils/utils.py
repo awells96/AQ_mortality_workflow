@@ -6,10 +6,12 @@
 # land_filter
 # autosize_figure
 # fix_months
+# bilinear_interp
 
 import xarray as xr
 import numpy as np
 import regionmask
+import xesmf as xe
 
 
 # === Change longitude values from 0-360 to -180-180 ===
@@ -78,9 +80,19 @@ def fix_months(da, expected_start, expected_end, scenario):
     # Crop to desired range
     if scenario == "ARISE":
         start_date = "2035-01"
+        end_date = "2069-12"
     elif scenario == "SSP245":
         start_date = "2020-01"
+        end_date = "2069-12"
+    elif scenario == "hist":
+        start_date = "1990-01"
+        end_date = "2009-12"
     else:
         raise ValueError(f"{scenario} is not known here")
-    da = da.sel(time=slice(start_date, "2069-12"))
+    da = da.sel(time=slice(start_date, end_date))
     return da
+
+
+def bilinear_interp(in_grid, target_grid):
+    regridder = xe.Regridder(in_grid, target_grid, method="bilinear")
+    return regridder
