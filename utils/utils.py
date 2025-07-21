@@ -7,7 +7,9 @@
 # autosize_figure
 # fix_months
 # bilinear_interp
+# create_global_country_map
 
+import os
 import xarray as xr
 import numpy as np
 import regionmask
@@ -93,6 +95,35 @@ def fix_months(da, expected_start, expected_end, scenario):
     return da
 
 
+# === bilinear interpolation ===
 def bilinear_interp(in_grid, target_grid):
     regridder = xe.Regridder(in_grid, target_grid, method="bilinear")
     return regridder
+
+
+# === Take list of country data and create global map ===
+def create_global_country_map(da):
+    # Path config
+    MASKS_DIR = "/glade/work/awells/air_quality/BMR/masks/country/"
+
+    # Load in country mask
+    mask_file = "GBD_Country_Masks_0.10.nc"
+    mask_path = os.path.join(MASKS_DIR, mask_file)
+    masks = xr.open_dataarray(mask_path)
+
+    # Create DataArray filled with NaNs
+    global_array = xr.DataArray(
+        np.full((len(masks.lat), len(masks.lon)), np.nan),
+        coords={"lat": masks.lat.values, "lon": masks.lon.values},
+        dims=["lat", "lon"]
+    )
+
+    # Loop over countries, select the data for each country and apply to
+    # empty array using the country mask
+    for i in range(len(masks.country)):
+        mask = masks.isel(country=i)
+        country = masks.isel(country=i)["country"]
+        mortality_country = da.sel(country=country)
+        global_array = global_array.where(mask == 0, mortality_country)
+
+    return global_array
