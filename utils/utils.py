@@ -8,6 +8,7 @@
 # fix_months
 # bilinear_interp
 # create_global_country_map
+# get_scenario_config
 
 import os
 import xarray as xr
@@ -127,3 +128,37 @@ def create_global_country_map(da):
         global_array = global_array.where(mask == 0, mortality_country)
 
     return global_array
+
+
+# === Return the configuration for a given scenario name ===
+_SCENARIO_CONFIG = {
+    "ARISE": {
+        "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "years": range(2035, 2069)
+    },
+    "SSP245": {
+        "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "years": range(2020, 2069)
+    },
+    "SSP245_G6": {
+        "ensemble_members": [1, 2, 3],
+        "years": range(2020, 2084)
+    },
+    "G6-1.5K": {
+        "ensemble_members": [1, 2, 3],
+        "years": range(2035, 2084)
+    },
+    "hist": {
+        "ensemble_members": [1],
+        "years": range(1990, 2009)
+    }
+}
+
+
+def get_scenario_config(scenario: str):
+    """Return the configuration for a given scenario name."""
+    try:
+        return _SCENARIO_CONFIG[scenario]
+    except KeyError:
+        raise ValueError(f"Scenario '{scenario}' not found. "
+                         f"Available options: {list(_SCENARIO_CONFIG.keys())}")
