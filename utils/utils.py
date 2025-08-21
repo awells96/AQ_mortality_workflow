@@ -1,5 +1,6 @@
 # utils.py
 # Common functions used in air_quality_project/
+# descriptions in utils_description.md
 
 # adjust_longitude
 # lat_weighted_mean
