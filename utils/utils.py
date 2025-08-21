@@ -2,7 +2,7 @@
 # Common functions used in air_quality_project/
 
 # adjust_longitude
-# latitude_weighted_mean
+# lat_weighted_mean
 # land_filter
 # autosize_figure
 # fix_months
@@ -96,7 +96,7 @@ def fix_months(da, expected_start, expected_end, scenario):
     return da
 
 
-# === bilinear interpolation ===
+# === Bilinear interpolation ===
 def bilinear_interp(in_grid, target_grid):
     regridder = xe.Regridder(in_grid, target_grid, method="bilinear")
     return regridder
