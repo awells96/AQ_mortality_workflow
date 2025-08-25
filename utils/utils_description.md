@@ -18,29 +18,44 @@
 
 * Take list of country data and create global map `create_global_country_map`
 
-* Return the configuration for a given scenario name `get_scenario_config` - *add new scenario details here, e.g.*
+* Return the configuration for a given model and scenario `get_scenario_config` - *add new scenario details here, e.g.*
 
   ```python
-  _SCENARIO_CONFIG = {
-      "ARISE": {
-      "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      "years": range(2035, 2069)
-    },
-      "SSP245": {
-      "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      "years": range(2020, 2069)
-    },
-      "SSP245_G6": {
-      "ensemble_members": [1, 2, 3],
-      "years": range(2020, 2084)
-    },
-      "G6-1.5K": {
-      "ensemble_members": [1, 2, 3],
-      "years": range(2035, 2084)
-    },
-      "hist": {
-      "ensemble_members": [1],
-      "years": range(1990, 2009)
+    _MODEL_CONFIG = {
+        "CESM2": {
+            "ARISE": {
+                "ensemble_members": list(range(1, 11)),
+                "years": range(2035, 2069)
+            },
+            "SSP245_ARISE": {
+                "ensemble_members": list(range(1, 11)),
+                "years": range(2020, 2069)
+            },
+            "SSP245_G6": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2020, 2084)
+            },
+            "G6-1.5K": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2035, 2084)
+            },
+            "hist": {
+                "ensemble_members": [1],
+                "years": range(1990, 2009)
+            }
+        },
+    
+        "UKESM1": {
+            "G6-1.5K": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2035, 2084)
+            },
+            "SSP245_G6": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2020, 2084)
+            },
+        }
     }
-  }
   ```
+
+* Standardise lat and lon coordinate names `standardise_latlon`

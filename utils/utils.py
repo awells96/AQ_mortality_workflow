@@ -10,6 +10,7 @@
 # bilinear_interp
 # create_global_country_map
 # get_scenario_config
+# standardise_latlon
 
 import os
 import xarray as xr
@@ -131,35 +132,64 @@ def create_global_country_map(da):
     return global_array
 
 
-# === Return the configuration for a given scenario name ===
-_SCENARIO_CONFIG = {
-    "ARISE": {
-        "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        "years": range(2035, 2069)
+# === Return the configuration for a given model and scenario ===
+_MODEL_CONFIG = {
+    "CESM2": {
+        "ARISE": {
+            "ensemble_members": list(range(1, 11)),
+            "years": range(2035, 2069)
+        },
+        "SSP245_ARISE": {
+            "ensemble_members": list(range(1, 11)),
+            "years": range(2020, 2069)
+        },
+        "SSP245_G6": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2020, 2084)
+        },
+        "G6-1.5K": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2035, 2084)
+        },
+        "hist": {
+            "ensemble_members": [1],
+            "years": range(1990, 2009)
+        }
     },
-    "SSP245": {
-        "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        "years": range(2020, 2069)
-    },
-    "SSP245_G6": {
-        "ensemble_members": [1, 2, 3],
-        "years": range(2020, 2084)
-    },
-    "G6-1.5K": {
-        "ensemble_members": [1, 2, 3],
-        "years": range(2035, 2084)
-    },
-    "hist": {
-        "ensemble_members": [1],
-        "years": range(1990, 2009)
+
+    "UKESM1": {
+        "G6-1.5K": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2035, 2084)
+        },
+        "SSP245_G6": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2020, 2084)
+        },
     }
 }
 
 
-def get_scenario_config(scenario: str):
-    """Return the configuration for a given scenario name."""
+def get_scenario_config(model: str, scenario: str):
+    """Return the configuration for a given model and scenario."""
     try:
-        return _SCENARIO_CONFIG[scenario]
+        return _MODEL_CONFIG[model][scenario]
     except KeyError:
-        raise ValueError(f"Scenario '{scenario}' not found. "
-                         f"Available options: {list(_SCENARIO_CONFIG.keys())}")
+        raise ValueError(
+            f"Config not found for model '{model}', scenario '{scenario}'.\n"
+            f"Available models: {list(_MODEL_CONFIG.keys())}"
+        )
+
+
+# === Standardise lat and lon coordinate names ===
+def standardise_latlon(da):
+    coord_map = {
+        "lat": ["lat", "latitude", "Latitude", "LAT"],
+        "lon": ["lon", "longitude", "Longitude", "LON"]
+    }
+    rename_dict = {}
+    for std_name, aliases in coord_map.items():
+        for alias in aliases:
+            if alias in da.coords:
+                rename_dict[alias] = std_name
+    return da.rename(rename_dict)
