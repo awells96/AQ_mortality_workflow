@@ -59,7 +59,7 @@ def land_filter(da):
     return da
 
 
-# === Figure sizing ===
+# === Figure sizing - thanks to Ben Johnson, UK Met Office ===
 def autosize_figure(nrows, ncolumns, scale_factor=1, xscale_factor=1, yscale_factor=1):
     xwidth = (ncolumns+0.67) * 5.0 * scale_factor * xscale_factor
     ylength = (nrows+0.67) * 3.6 * scale_factor * yscale_factor
