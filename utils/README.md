@@ -1,47 +1,61 @@
-## 🔧 Jupyter Startup Script for Automatic Project Path Setup
+## utils.py description
 
-To avoid repeating `sys.path.append(...)` in every notebook, this project uses a **Jupyter startup script** to automatically add the project root to Python’s import path — but **only when working inside this project directory**.
+`utils.py` contains common functions used in air_quality_project/ (see `README.md` for description of how to set up use of utils in jupyter notebooks). 
 
-### ✅ Setup Instructions
+### Functions in `utils.py`
 
-1. **Create the Jupyter startup directory** (if it doesn't exist):
+* Change longitude values from 0-360 to -180-180 `adjust_longitude`
 
-   ```bash
-   mkdir -p ~/.ipython/profile_default/startup
-   ```
+* Latitude weighting mean `lat_weighted_mean`
 
-2. **Create a startup script** named `00-startup-path.py`:
+* Removing ocean `land_filter`
 
-   ```bash
-   nano ~/.ipython/profile_default/startup/00-startup-path.py
-   ```
+* Figure sizing `autosize_figure`
 
-3. **Paste the following code** into that file:
+* Monthly files don't always have the correct dates `fix_months`
 
-   ```python
-   import sys
-   from pathlib import Path
+* Bilinear interpolation `bilinear_interp`
 
-   # Define the root path of this project
-   project_root = Path("/glade/u/home/awells/air_quality_project").resolve()
-   cwd = Path.cwd().resolve()
+* Take list of country data and create global map `create_global_country_map`
 
-   # Only add to sys.path if working within the project directory
-   if project_root in cwd.parents or cwd == project_root:
-       if str(project_root) not in sys.path:
-           sys.path.append(str(project_root))
-   ```
-
-### 📦 Result
-
-* When a Jupyter kernel starts inside `air_quality_project/` (or its subdirectories), the project root is automatically added to `sys.path`.
-
-* This allows you to import shared utility modules cleanly:
+* Return the configuration for a given model and scenario `get_scenario_config` - *add new scenario details here, e.g.*
 
   ```python
-  from utils.processing_utils import func
+    _MODEL_CONFIG = {
+        "CESM2": {
+            "ARISE": {
+                "ensemble_members": list(range(1, 11)),
+                "years": range(2035, 2069)
+            },
+            "SSP245_ARISE": {
+                "ensemble_members": list(range(1, 11)),
+                "years": range(2020, 2069)
+            },
+            "SSP245_G6": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2020, 2084)
+            },
+            "G6-1.5K": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2035, 2084)
+            },
+            "hist": {
+                "ensemble_members": [1],
+                "years": range(1990, 2009)
+            }
+        },
+    
+        "UKESM1": {
+            "G6-1.5K": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2035, 2084)
+            },
+            "SSP245_G6": {
+                "ensemble_members": [1, 2, 3],
+                "years": range(2020, 2084)
+            },
+        }
+    }
   ```
 
-* No need to manually modify `sys.path` in individual notebooks.
-
-
+* Standardise lat and lon coordinate names `standardise_latlon`
