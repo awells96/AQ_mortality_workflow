@@ -166,6 +166,10 @@ _MODEL_CONFIG = {
             "ensemble_members": [1, 2, 3],
             "years": range(2020, 2084)
         },
+        "hist": {
+            "ensemble_members": [1],
+            "years": range(1990, 2009)
+        }
     }
 }
 
@@ -175,9 +179,14 @@ def get_scenario_config(model: str, scenario: str):
     try:
         return _MODEL_CONFIG[model][scenario]
     except KeyError:
+        available_models = list(_MODEL_CONFIG.keys())
+        available_scenarios = (
+            list(_MODEL_CONFIG[model].keys()) if model in _MODEL_CONFIG else []
+        )
         raise ValueError(
             f"Config not found for model '{model}', scenario '{scenario}'.\n"
-            f"Available models: {list(_MODEL_CONFIG.keys())}"
+            f"Available models: {available_models}\n"
+            f"Available scenarios for {model if model in _MODEL_CONFIG else 'N/A'}: {available_scenarios}"
         )
 
 
