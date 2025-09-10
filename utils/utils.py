@@ -6,13 +6,14 @@
 # lat_weighted_mean
 # land_filter
 # autosize_figure
-# fix_months
 # bilinear_interp
 # create_global_country_map
 # get_scenario_config
 # standardise_latlon
+# load_file_list
 
 import os
+import json
 import xarray as xr
 import numpy as np
 import regionmask
@@ -64,38 +65,6 @@ def autosize_figure(nrows, ncolumns, scale_factor=1, xscale_factor=1, yscale_fac
     xwidth = (ncolumns+0.67) * 5.0 * scale_factor * xscale_factor
     ylength = (nrows+0.67) * 3.6 * scale_factor * yscale_factor
     return (xwidth, ylength)
-
-
-# === Monthly files don't always have the correct dates ===
-def fix_months(da, expected_start, expected_end, scenario):
-    """Fix time and crop"""
-    expected_dates = xr.date_range(
-        start=expected_start,
-        end=expected_end,
-        freq="MS",
-        calendar="noleap",
-        use_cftime=True
-    )
-
-    if len(da.time) != len(expected_dates):
-        raise ValueError("Time dimension length mismatch with expected range.")
-
-    da["time"] = expected_dates
-
-    # Crop to desired range
-    if scenario == "ARISE":
-        start_date = "2035-01"
-        end_date = "2069-12"
-    elif scenario == "SSP245":
-        start_date = "2020-01"
-        end_date = "2069-12"
-    elif scenario == "hist":
-        start_date = "1990-01"
-        end_date = "2009-12"
-    else:
-        raise ValueError(f"{scenario} is not known here")
-    da = da.sel(time=slice(start_date, end_date))
-    return da
 
 
 # === Bilinear interpolation ===
@@ -202,3 +171,11 @@ def standardise_latlon(da):
             if alias in da.coords:
                 rename_dict[alias] = std_name
     return da.rename(rename_dict)
+
+
+# === Function to load files ===
+def load_file_list(DIR, filename):
+    file_path = os.path.join(DIR, filename)
+    with open(file_path, "r") as f:
+        data = json.load(f)
+    return data["files"]
