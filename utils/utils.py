@@ -153,7 +153,7 @@ _MODEL_CONFIG = {
         },
         "hist": {
             "ensemble_members": [1],
-            "years": range(1990, 2009)
+            "years": range(1990, 2010)
         }
     },
 
@@ -168,7 +168,7 @@ _MODEL_CONFIG = {
         },
         "hist": {
             "ensemble_members": [1],
-            "years": range(1990, 2009)
+            "years": range(1990, 2010)
         }
     }
 }
