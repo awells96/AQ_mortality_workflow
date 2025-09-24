@@ -11,6 +11,9 @@
 # get_scenario_config
 # standardise_latlon
 # load_file_list
+# kgm3_to_µgm3
+# kgkg_to_ppb
+# molmol_to_ppb
 
 import os
 import json
@@ -179,3 +182,21 @@ def load_file_list(DIR, filename):
     with open(file_path, "r") as f:
         data = json.load(f)
     return data["files"]
+
+
+# === Convert kg/m3 to µg/m3 ===
+def kgm3_to_µgm3(data):
+    # kg/m3 -> µg/m3 (multiply by 1e9)
+    return data * 1e9
+
+
+# === Convert kg/kg to ppb ===
+def kgkg_to_ppb(data):
+    # kg/kg -> ppb (multiply by 6.0345e8)
+    return data * 6.0345e8
+
+
+# === Convert mol/mol to ppb ===
+def molmol_to_ppb(data):
+    # mol/mol -> ppb (multiply by 1e9)
+    return data * 1e9
