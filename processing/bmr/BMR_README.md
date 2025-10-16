@@ -17,6 +17,7 @@ Cause(s):
 - Ischemic Heart Disease  
 - Stroke  
 - Tracheal, bronchus, and lung cancer  
+  
 Location: Select all countries and territories  
 Age: All ages  
 Sex: Both  
@@ -24,8 +25,11 @@ Year: 1990-2009
 
 ## Country masks 
 Available through the zenodo link associated with McDuffie et al. (2021).  
+  
 McDuffie, E. E., Martin, R. V., Spadaro, J. V., Burnett, R., Smith, S. J., O'Rourke, P., Hammer, M., van Donkelaar, A., Bindle, L., Shah, V., Jaegle, L., Luo, G., Yu, F., Adeniran, J., Lin, J., Brauer, M. Source Sector and Fuel Contributions to Ambient PM2.5 Attributable Mortality Across Multiple Spatial Scales, Nature Communications, 12, 3594 (2021). https://doi.org/10.1038/s41467-021-23853-y
+  
 McDuffie, E., Brauer, M., Martin, R., Spadaro, J., Burnett, R., Hammer, M., & van Donkelaar, A. (2021). GBD-MAPS-Global: Analysis Input Dataset [Data set]. Zenodo. https://doi.org/10.5281/zenodo.4642700  
+  
 “Country and Region masks are derived from country shapefiles from the GBD, as well as the GBD country and region classifications”  
 
 ### Pre-processing steps
@@ -34,9 +38,9 @@ McDuffie, E., Brauer, M., Martin, R., Spadaro, J., Burnett, R., Hammer, M., & va
 ### Processing
 - GBD download saves as a csv file.  
 - Process to calculate the BMR for the years 1990-2009 for each country (lower, mean, upper) and each health variable using `1__GBD_BMR_to_netcdf.ipynb`  
-The average BMR across 1990-2009 is calculated and applied to all future mortality estimates.  
-Runs for all given health variables  
-Country labels do not match between country masks dataset and BMR dataset(s). Use `2__Relabel_countries.ipynb` to correct the mismatching labels and apply to BMR dataset(s).  
+  - The average BMR across 1990-2009 is calculated and applied to all future mortality estimates.  
+  - Runs for all given health variables  
+- Country labels do not match between country masks dataset and BMR dataset(s). Use `2__Relabel_countries.ipynb` to correct the mismatching labels and apply to BMR dataset(s).  
 
 ### Expected file outputs
 `GBD_Country_Masks_0.10.nc`  
