@@ -1,4 +1,4 @@
-# Ozone - OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) . 
+# Ozone - OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar)
 
 ## Data Citations
 
@@ -6,22 +6,22 @@
 *SSP2-4.5*  
 Mike Mills, Daniele Visioni, Jadwiga (Yaga) Richter. (2022). CESM2-WACCM6-SSP245. UCAR/NCAR - Climate and Global Dynamics Laboratory. https://doi.org/10.26024/0cs0-ev98. Accessed 20 May 2025.
 
-*Historical CESM-WACCM*
+*Historical CESM-WACCM*  
 **find citation**
 
 *ARISE-SAI-1.5K*  
 Richter, J. H., Visioni, D., MacMartin, D. G., Bailey, D. A., Rosenbloom, N., Dobbins, B., Lee, W. R., Tye, M., and Lamarque, J.-F.: Assessing Responses and Impacts of Solar climate intervention on the Earth system with stratospheric aerosol injection (ARISE-SAI): protocol and initial results from the first simulations, Geosci. Model Dev., 15, 8221–8243, https://doi.org/10.5194/gmd-15-8221-2022, 2022. 
 
-*G6-1.5K*
+*G6-1.5K*  
 **find citation - Walker?**
 
 ### UKESM1
 *SSP2-4.5*  
 **find citation**  
 
-*Historical*
+*Historical*  
 **find citation**  
-https://data.ceda.ac.uk/badc/cmip6/data/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r1i1p1f2 
+https://data.ceda.ac.uk/badc/cmip6/data/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r1i1p1f2  
 
 *ARISE-SAI-1.5K*  
 **find citation - Matthew?**  
@@ -50,12 +50,12 @@ Environmental Science & Technology 2021 55 (8), 4389-4398. DOI: 10.1021/acs.est.
 - Calulate the global mean, country level and regional level OSDMA8 over time using `5a__Save_global_mean_OSDMA8.ipynb`, `5b__Save_country_OSDMA8.ipynb` and `5c__Save_regional_OSDMA8.ipynb`.
 
 ### Expected file outputs
-`MDA8_{model}_{scenario}_{ens_num}_{dates-yyyymm}.nc`
-`OSDMA8_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
-`OSDMA8_BC_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
-`OSDMA8_BC_globalmean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
-`OSDMA8_BC_Country_mean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
-`OSDMA8_BC_Regional_mean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
+`MDA8_{model}_{scenario}_{ens_num}_{dates-yyyymm}.nc`  
+`OSDMA8_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`OSDMA8_BC_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`OSDMA8_BC_globalmean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`OSDMA8_BC_Country_mean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`OSDMA8_BC_Regional_mean_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
 
 
 
