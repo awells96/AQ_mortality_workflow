@@ -49,7 +49,7 @@ Gavin Shaddick, Matthew L. Thomas, Heresh Amini, David Broday, Aaron Cohen, Jose
     - This step includes downscaling the climate model data to the same grid as the observations (0.1x0.1 deg)
 
 ### Expected file outputs
-`Annual_PM25_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
-`Annual_PM25_BC_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`
+`Annual_PM25_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Annual_PM25_BC_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
 
 
