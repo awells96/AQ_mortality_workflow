@@ -47,6 +47,8 @@ Environmental Science & Technology 2021 55 (8), 4389-4398. DOI: 10.1021/acs.est.
 - Calculate the OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) using `3__Save_OSDMA8.ipynb`
 - Bias correct the climate model product using `4__Bias_correct_OSDMA8.ipynb` using the observations and historical data. 
     - This step includes downscaling the climate model data to the same grid as the observations (0.1x0.1 deg)
+ 
+### Extra optional processing
 - Calulate the global mean, country level and regional level OSDMA8 over time using `5a__Save_global_mean_OSDMA8.ipynb`, `5b__Save_country_OSDMA8.ipynb` and `5c__Save_regional_OSDMA8.ipynb`.
 
 ### Expected file outputs
