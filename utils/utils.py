@@ -14,9 +14,11 @@
 # kgm3_to_µgm3
 # kgkg_to_ppb
 # molmol_to_ppb
+# minus_one_month
 
 import os
 import json
+import cftime
 import xarray as xr
 import numpy as np
 import regionmask
@@ -200,3 +202,18 @@ def kgkg_to_ppb(data):
 def molmol_to_ppb(data):
     # mol/mol -> ppb (multiply by 1e9)
     return data * 1e9
+
+
+# CESM2 naming convention shifts months by 1
+# the data represents 2015-01 - 2020-12 but time coord shows 2015-02 - 2021-01
+def minus_one_month(date):
+    """Subtract one month from a cftime.DatetimeNoLeap object."""
+    year, month = date.year, date.month
+    if month == 1:
+        return cftime.DatetimeNoLeap(year - 1, 12, date.day,
+                                     date.hour, date.minute, date.second,
+                                     date.microsecond, has_year_zero=date.has_year_zero)
+    else:
+        return cftime.DatetimeNoLeap(year, month - 1, date.day,
+                                     date.hour, date.minute, date.second,
+                                     date.microsecond, has_year_zero=date.has_year_zero)
