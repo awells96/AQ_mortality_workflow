@@ -4,21 +4,33 @@
 
 ### Functions in `utils.py`
 
-* Change longitude values from 0-360 to -180-180 `adjust_longitude`
+* `adjust_longitude` Change longitude values from 0-360 to -180-180 
 
-* Latitude weighting mean `lat_weighted_mean`
+* `lat_weighted_mean` Latitude weighting mean
 
-* Removing ocean `land_filter`
+* `land_filter` Removing ocean
 
-* Figure sizing `autosize_figure`
+* `autosize_figure` Figure sizing
 
-* Monthly files don't always have the correct dates `fix_months`
+* `fix_months` Monthly files don't always have the correct dates
 
-* Bilinear interpolation `bilinear_interp`
+* `bilinear_interp` Bilinear interpolation
 
-* Take list of country data and create global map `create_global_country_map`
+* `create_global_country_map` Take list of country data and create global map
 
-* Return the configuration for a given model and scenario `get_scenario_config` - *add new scenario details here, e.g.*
+* `standardise_latlon` Standardise lat and lon coordinate names
+
+* `load_file_list` A function to load json files
+
+* `kgm3_to_µgm3` Conversion function from kg/m3 to µg/m3
+
+* `kgkg_to_ppb` Conversion function from kg/kg to ppb
+
+* `molmol_to_ppb` Conversion function from mol/mol to ppb
+
+* `minus_one_month` Shift month coordinate, often used for CESM data
+
+* `get_scenario_config` Return the configuration for a given model and scenario - *add new scenario details here, e.g.*
 
   ```python
     _MODEL_CONFIG = {
@@ -57,5 +69,3 @@
         }
     }
   ```
-
-* Standardise lat and lon coordinate names `standardise_latlon`
