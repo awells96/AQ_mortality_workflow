@@ -109,21 +109,9 @@ def create_global_country_map(da):
 # === Return the configuration for a given model and scenario ===
 _MODEL_CONFIG = {
     "CESM2": {
-        "ARISE": {
-            "ensemble_members": list(range(1, 11)),
-            "years": range(2035, 2069)
-        },
-        "SSP245_ARISE": {
-            "ensemble_members": list(range(1, 11)),
-            "years": range(2020, 2069)
-        },
-        "SSP245_G6": {
+        "SSP245": {
             "ensemble_members": [1, 2, 3],
             "years": range(2020, 2084)
-        },
-        "G6-1.5K": {
-            "ensemble_members": [1, 2, 3],
-            "years": range(2035, 2084)
         },
         "hist": {
             "ensemble_members": [1],
@@ -132,11 +120,7 @@ _MODEL_CONFIG = {
     },
 
     "UKESM1": {
-        "G6-1.5K": {
-            "ensemble_members": [1, 2, 3],
-            "years": range(2035, 2084)
-        },
-        "SSP245_G6": {
+        "SSP245": {
             "ensemble_members": [1, 2, 3],
             "years": range(2020, 2084)
         },
