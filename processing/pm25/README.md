@@ -2,7 +2,7 @@
 
 ## Data inputs
 - Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
-- Shaddick et al. (2018) observations
+- [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
 
 ## Pre-processing steps
 - Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
