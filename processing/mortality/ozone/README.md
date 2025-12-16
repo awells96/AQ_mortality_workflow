@@ -1,5 +1,37 @@
 # COPD Mortality due to surface ozone
 
+## Data inputs
+- [Population](/processing/population) estimates on a 0.1° × 0.1° resolution
+- [Baseline Mortality Rate](/processing/bmr)
+    - These are given at a country level and can be mapped to the same 0.1° × 0.1° resolution
+- [OSDMA8 projections](/processing/ozone)
+
+## Pre-processing steps
+- **add some information about the testing steps** 
+
+## Processing
+Three of the components to the mortality calculations include a range of uncertainty, *BMR*, $\beta$ and *TMREL*. Therefore there are two parts to this processing:
+
+1. Calculating mortality using central estimates only
+    - Calulating mortality on a gridpoint scale using `1a__Calculate_mortality.ipynb`.
+    - Sum these gridpoint estimates to a country level scale using `1b__Country_level_mortality.ipynb`.
+
+2. Calculating mortality including uncertainty using parametric bootstrapping
+    - First calculate the samples for *BMR*, $\beta$ and *TMREL* using `2__Save_sample_size.ipynb`.
+        - Selecting the number of samples is a balance between computational cost, given the high spatial resolution and associated memory requirements, and the need for a sufficiently large sample size to robustly span the uncertainty space.  
+    - Calculate the global sum mortality using parametric bootstrapping with `3a__Global_mortality_samples.ipynb`.
+    - Merge yearly global data files using `3b__Merge_global_mortality.ipynb`.
+    - Calculate regional mortality using parametric bootstrapping with `4a__Regional_mortality_samples.ipynb`.
+    - Merge yearly and regional data files using `4b__Merge_regional_mortality.ipynb`.
+
+### Expected file outputs
+`Mortality_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_Country_sum_{model}_{scenario}_{dates-yyyy}.nc`  
+`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
+`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
+`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+
 ## Mortality equations
 
 The following equations have been used to calculate mortality *(M)* due to surface ozone:  
@@ -23,48 +55,14 @@ RR(x, y) = e^{\beta \, (OSDMA8(x, y) - TMREL)}
 ```
 <br>
 
-where $\beta$ is provided by the Global Burden of Disease (2021), *[OSDMA8(x, y)](/processing/ozone)* is the Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) at point (x, y) and *TMREL* is the Theoretical Minimum Risk Exposure Level provided by the Global Burden of Disease (2021). 
+where *[OSDMA8(x, y)](/processing/ozone)* is the Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) at point (x, y) and *TMREL* is the Theoretical Minimum Risk Exposure Level provided by the [Global Burden of Disease (2021)](https://doi.org/10.1016/S0140-6736(24)00933-4). $\beta$ is calculated using the relationship provided by the GBD.
 
 ## Global Burden of Disease (GBD)
 The GBD provide relative risk estimates for a range of risk factors, including surface ozone and PM<sub>2.5</sub>.  
 
-COPD is the only included outcome for ambient ozone pollution. The GBD perform a literature review of studies examining long-term ozone exposure and COPD and use the meta-regression—Bayesian, regularised, trimmed (MR-BRT) meta-regression tool to conduct a meta-analysis on those studies. The inverse-standard error weighted meta-analysis provided an estimated relative risk of 1.074 (95% CI
-1.014–1.137) per 10 ppb. This is used to calculate $\beta$. 
+COPD is the only included outcome for ambient ozone pollution. The GBD perform a literature review of studies examining long-term ozone exposure and COPD and use the meta-regression—Bayesian, regularised, trimmed (MR-BRT) meta-regression tool to conduct a meta-analysis on those studies. The inverse-standard error weighted meta-analysis provided an estimated relative risk of 1.074 (95% CI 1.014–1.137) per 10 ppb. This is used to calculate $\beta$. 
   
-The TMREL is based on the exposure distribution from the ACS CPS-II study (Turner et al., 2016). It is a uniform distribution around the minimum and 5th percentile values observed in the cohort, ~U(29.1, 35.7), in ppb.
-
-## Data inputs
-- [Population](/processing/population) estimates on a 0.1 × 0.1 degree grid
-- Baseline Mortality Rate
-    - These are given at a country level and can be aggregated to the same 0.1 × 0.1 degree grid
-- OSDMA8 projections
-
-### Pre-processing steps
-- **add some information about the testing steps** 
-
-### Processing
-Three of the above components to the mortality calculations include a range of uncertainty, *BMR*, $\beta$ and *TMREL*. Therefore there are two parts to this processing:
-
-1. Calculating mortality using central estimates
-    - Calulating mortality on a gridpoint scale using `1a__Calculate_mortality.ipynb`.
-    - Sum these gridpoint estimates to a country level scale using `1b__Country_level_mortality.ipynb`.
-
-2. Calculating mortality and including uncertainty with parametric bootstrapping
-    - First calculate the samples for *BMR*, $\beta$ and *TMREL* using `2__Save_sample_size.ipynb`.
-    - Calculate the global sum mortality using parametric bootstrapping with `3a__Global_mortality_samples.ipynb`.
-        - If the number of samples results in high computational time (approx. >400) use `3b__Global_mortality_stats.ipynb` which saves key statistics.
-    - Merge yearly global data files using `3c__Merge_global_mortality.ipynb`.
-    - Calculate regional mortality using parametric bootstrapping with `4a__Regional_mortality_samples.ipynb`.
-        - As above, optionally use `4b__Regional_mortality_stats.ipynb` for larger sample sizes.
-    - Merge yearly and regional data files using `4c__Merge_regional_mortality.ipynb`.
-
-### Expected file outputs
-`Mortality_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Mortality_Country_sum_{model}_{scenario}_{dates-yyyy}.nc`  
-`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
-`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
-`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+The TMREL is based on the exposure distribution from the ACS CPS-II study ([Turner et al., 2016](https://doi.org/10.1164/rccm.201508-1633oc)). It is a uniform distribution around the minimum and 5th percentile values observed in the cohort, ~U(29.1, 35.7), in ppb.  
 
 
 
