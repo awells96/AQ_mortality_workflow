@@ -1,5 +1,7 @@
 ## 🔧 Jupyter Startup Script for Automatic Project Path Setup
 
+Shared functions can be found in the `utils/` directory. But `utils/` is not in the default Python path, so when you use functions from `utils/utils.py` you’ll need to add it to `sys.path.append(...)` so Python knows where to look.  
+
 To avoid repeating `sys.path.append(...)` in every notebook, this project uses a **Jupyter startup script** to automatically add the project root to Python’s import path — but **only when working inside this project directory**.
 
 ### ✅ Setup Instructions
