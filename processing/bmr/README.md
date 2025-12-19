@@ -35,6 +35,7 @@ McDuffie, E., Brauer, M., Martin, R., Spadaro, J., Burnett, R., Hammer, M., & va
 
 ## Search terms
 The following search terms were used for the example provided here.  
+
 GBD Estimate: Cause of death or injury  
 Measure: Deaths  
 Metric: Number, Percent, Rate (use rate to calculate BMR - rate is given as x per 100K)  
