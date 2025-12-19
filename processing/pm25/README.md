@@ -13,7 +13,7 @@
     - Examples for CESM2 are given in `1__Monthly_PM2.5_calculation.ipynb`  
 - Calculate the annual mean using `2__Save_annual_PM2.5.ipynb`
 - Bias correct the climate model product using `3__Bias_correct_PM25.ipynb` with the observations and historical data. 
-    - This step includes downscaling the climate model data to the same grid as the observations (0.1x0.1 deg)
+    - This step includes downscaling the climate model data to the same grid as the observations (0.1°x0.1° resoluution)
 
 ### Expected file outputs
 `{PM_var}_mmr_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
