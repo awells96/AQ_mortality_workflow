@@ -1,7 +1,7 @@
 # Baseline Mortality Rate (BMR)
 
 ## Pre-processing steps
-- Country and region masks (0.1x0.1 degree) from Duffey et al. (2021) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
+- Country and region masks (0.1°x0.1° resolution) from Duffey et al. (2021) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
 
 ## Processing
 - [GBD Results VizHub](https://vizhub.healthdata.org/gbd-results/) download saves as a csv file - see [Search terms](#Search-terms) for more information regarding the data download used in this example.  
