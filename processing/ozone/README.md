@@ -7,7 +7,7 @@
 ## Pre-processing steps
 - Write .json file with list of file paths `0a__Write_file_paths.ipynb`
 - Converting climate model output to hourly surface ozone measurements in ppb.
-- Examples for CESM2 and UKESM1 are given in `0b__CESM2_hourly_o3.ipynb` and `0b__UKESM1_hourly_o3.ipynb`
+    - Examples for CESM2 and UKESM1 are given in `0b__CESM2_hourly_o3.ipynb` and `0b__UKESM1_hourly_o3.ipynb`
 
 ## Processing
 - Calculate a monthly mean of the daily 8-hr maximum using `1__Save_MDA8_O3.ipynb` (MDA8: 8hr Daily Maximum)
