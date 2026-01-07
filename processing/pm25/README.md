@@ -7,6 +7,7 @@
 ## Pre-processing steps
 - Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
 - Write a .json file of file paths for data `0b__Write_file_paths_PM_components`
+- Converting mmr (kg/kg) to a concentration (µg/m³) requires calculating air density from pressure and temperature. Process temperature on pressure levels `0c_Monthly_temperature`
 
 ## Processing
 - Calculating the total PM<sub>2.5</sub> concentration from mass mixing ratios following the [Turnock et al. (2022)](https://doi.org/10.1029/2022EF002687) equation. 
