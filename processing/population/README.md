@@ -1,5 +1,10 @@
 # Population Data (POP)  
 
+## Data inputs
+From [Gao et al. (2020)](https://doi.org/10.7910/DVN/TLJ99B)
+- `baseYr_total_2000.nc4`
+- `ssp2_total_{year}.nc4`
+
 ## Processing  
 - The population data used in this example are at a 1km resolution (0.0083° x 0.0083°) which is too high relative to the ozone and PM2.5 observations which are at 0.1° x 0.1° resolution
 - Aggregating the population to a new grid (conserving the total population count) is performed using `1__Regrid_population.ipynb` 
