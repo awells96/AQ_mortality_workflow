@@ -1,10 +1,18 @@
 # Baseline Mortality Rate (BMR)
 
+## Data inputs
+From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100)
+- `GBD_Country_Masks_0.10.mat`
+- `GBD_Region_Masks_0.10.mat`
+
+From [VizHub data search](#search-terms)
+- `IHME-GBD_2021_DATA-{mortality_outcome}.csv`
+
 ## Pre-processing steps
-- Country and region masks (0.1°x0.1° resolution) from Duffey et al. (2021) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
+- Country and region masks (0.1°x0.1° resolution) from [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
 
 ## Processing
-- [GBD Results VizHub](https://vizhub.healthdata.org/gbd-results/) download saves as a csv file - see [Search terms](#Search-terms) for more information regarding the data download used in this example.  
+- [GBD Results VizHub](https://vizhub.healthdata.org/gbd-results/) download saves as a csv file - see [Search terms](#search-terms) for more information regarding the data download used in this example.  
 - Calculate the BMR for the years 1990-2009 for each country (lower, mean, upper) and each health variable using `1__GBD_BMR_to_netcdf.ipynb`  
   - The average mortality rate across 1990-2009 is calculated and applied to all future mortality estimates.  
   - Runs for all given health variables  
