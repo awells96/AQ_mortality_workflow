@@ -8,6 +8,8 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100)
 From [VizHub data search](#search-terms)
 - `IHME-GBD_2021_DATA-{mortality_outcome}.csv`
 
+To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
+
 ## Pre-processing steps
 - Country and region masks (0.1°x0.1° resolution) from [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
 
