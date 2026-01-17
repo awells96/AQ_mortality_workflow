@@ -1,8 +1,18 @@
 # Ozone - OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar)
 
 ## Data inputs  
-- Hourly or 3hrly surface ozone
-- DeLang et al. (2021) observations
+- [DeLang et al. (2021)](https://doi.org/10.1021/acs.est.0c07742) observations
+
+To follow the example (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 2 with:
+- `MDA8_CESM2_SSP245_01_202001-208412.nc`
+- `MDA8_CESM2_hist_01_199001-201012.nc`
+
+Or, to run all the scripts, download the hourly surface ozone (sfo3) from the [Earth System Grid Federation](https://esgf.github.io/index.html):  
+
+- Data for CESM2-WACCM SSP2-4.5 ensemble 1 (~120GB) is available (last accessed: 16th January 2025) through the ORNL Node with:  
+`Query String: latest = true AND (source_id = CESM2-WACCM) AND (experiment_id = ssp245) AND (variable_id = sfo3) AND (variant_label = r1i1p1f1)`
+
+- The historical sfo3 data for CESM2-WACCM is not available though the ESGF (last accessed: 16th January 2025) but can be provided upon request (~50GB)
 
 ## Pre-processing steps
 - Write .json file with list of file paths `0a__Write_file_paths.ipynb`
