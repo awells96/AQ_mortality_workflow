@@ -1,8 +1,14 @@
 # PM<sub>2.5</sub> - Annual mean PM<sub>2.5</sub>
 
 ## Data inputs
-- Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
 - [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
+- Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
+
+To follow the example (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 1 with:
+- `{VAR}_mmr_CESM2_SSP245_01_2015-2100.nc`
+- `{VAR}_mmr_CESM2_hist_01_2015-2100.nc`
+- `T_CESM2_hist_01_1990-2010.nc`
+- `T_CESM2_SSP245_01_2015-2100.nc`
 
 ## Pre-processing steps
 - Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
