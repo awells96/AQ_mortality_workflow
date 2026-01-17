@@ -2,6 +2,7 @@
 
 ## Data inputs  
 - [DeLang et al. (2021)](https://doi.org/10.1021/acs.est.0c07742) observations
+- Hourly or 3-hourly surface ozone
 
 To follow the example (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 2 with:
 - `MDA8_CESM2_SSP245_01_202001-208412.nc`
