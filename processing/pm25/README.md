@@ -4,7 +4,7 @@
 - [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
 - Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
 
-To follow the example (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 1 with:
+To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 1 with the following data, which can be found [here](ADD DOI FOR ZENODO UPLOAD):
 - `{VAR}_mmr_CESM2_SSP245_01_2015-2100.nc`
 - `{VAR}_mmr_CESM2_hist_01_2015-2100.nc`
 - `T_CESM2_hist_01_1990-2010.nc`
