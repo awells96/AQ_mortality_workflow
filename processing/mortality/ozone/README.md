@@ -6,6 +6,8 @@
     - These are given at a country level and can be mapped to the same 0.1° × 0.1° resolution
 - [OSDMA8 projections](/processing/ozone)
 
+To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
+
 ## Pre-processing steps
 - **add some information about the testing steps** 
 
