@@ -14,7 +14,6 @@ Relative Risk curves from the [Global Burden of Disease](https://doi.org/10.6069
 To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
 
 ## Pre-processing steps
-- **add some information about the testing steps**
 - The RR curves from the GBD 2021 can be converted from csv files to netCDFs using `0__Save_RR_curves_GBD21.ipynb`.
 
 ## Processing
@@ -23,6 +22,7 @@ Three of the components to the mortality calculations include a range of uncerta
 1. Calculating mortality using central estimates
     - Calulating mortality on a gridpoint scale using `1a__Calculate_mortality.ipynb`.
     - Sum these gridpoint estimates to a country level scale using `1b__Country_level_mortality.ipynb`.
+    - The country level script can be easily adjusted to calculate regional level mortality using central estimates.
 
 2. Calculating mortality and including uncertainty with parametric bootstrapping
     - First calculate the samples for *BMR*, *RR* and *TMREL* using `2__Save_sample_size.ipynb`.
