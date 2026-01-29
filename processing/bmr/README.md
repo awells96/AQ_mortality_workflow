@@ -1,6 +1,9 @@
 # Baseline Mortality Rate (BMR)
 
 ## Data inputs
+
+To run this portion of the example workflow, you will need to have available the following data: 
+
 From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100)
 - `GBD_Country_Masks_0.10.mat`
 - `GBD_Region_Masks_0.10.mat`
@@ -11,9 +14,15 @@ From [VizHub data search](#search-terms)
 To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
 
 ## Pre-processing steps
+
+First, you will need to convert country and region masks into a different file format, so they can be integrated with other data. 
+
 - Country and region masks (0.1°x0.1° resolution) from [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
 
 ## Processing
+
+Next, you will need to download data on baseline mortality rates and prepare them to integrate with other country-level data in the pipeline. 
+
 - [GBD Results VizHub](https://vizhub.healthdata.org/gbd-results/) download saves as a csv file - see [Search terms](#search-terms) for more information regarding the data download used in this example.  
 - Calculate the BMR for the years 1990-2009 for each country (lower, mean, upper) and each health variable using `1__GBD_BMR_to_netcdf.ipynb`  
   - The average mortality rate across 1990-2009 is calculated and applied to all future mortality estimates.  
