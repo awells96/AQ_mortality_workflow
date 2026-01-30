@@ -12,7 +12,6 @@ import numpy as np
 def att_frac(x, TMREL, beta):
     # equation is: AF = (RR - 1)/RR
     # where RR = e^(beta*(x-TMREL))
-    # Akritidis et al. (2024) - unsure which reference would be best
 
     O3_diff = x - TMREL
     TMREL_O3 = xr.where(O3_diff > 0, O3_diff, 0)  # where the difference < 0 set to 0
@@ -25,6 +24,5 @@ def att_frac(x, TMREL, beta):
 # === Mortality equation ===
 def mortality(AF, bmr, pop):
     # equation is: M(x,y) = AF(x,y) * BMR_c * POP(x,y)
-    # Akritidis et al. (2024) - unsure which reference would be best
     M = AF * bmr * pop
     return M
