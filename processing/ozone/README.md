@@ -1,6 +1,8 @@
 # Ozone - OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar)
 
 ## Data inputs  
+To run this portion of the example workflow, you will need to have available the following data:
+
 - [DeLang et al. (2021)](https://doi.org/10.1021/acs.est.0c07742) observations
 - Hourly or 3-hourly surface ozone
 
@@ -16,11 +18,15 @@ Or, to run all the scripts, download the hourly surface ozone (sfo3) from the [E
 - The historical sfo3 data for CESM2-WACCM is not available though the ESGF (last accessed: 16th January 2025) but can be provided upon request (~50GB)
 
 ## Pre-processing steps
+First, you will need to preprocess the data into hourly surface ozone concentrations in ppb.
+
 - Write .json file with list of file paths `0a__Write_file_paths.ipynb`
 - Converting climate model output to hourly surface ozone measurements in ppb.
     - Examples for CESM2 and UKESM1 are given in `0b__CESM2_hourly_o3.ipynb` and `0b__UKESM1_hourly_o3.ipynb`
 
 ## Processing
+Next, you will need to calculate the GBD relevent metric to integrate the data with the pipeline.
+
 - Calculate a monthly mean of the daily 8-hr maximum using `1__Save_MDA8_O3.ipynb` (MDA8: 8hr Daily Maximum)
 - Calculate the OSDMA8: Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) using `2__Save_OSDMA8.ipynb`
 - Bias correct the climate model product using `3__Bias_correct_OSDMA8.ipynb` using the observations and historical data. 
