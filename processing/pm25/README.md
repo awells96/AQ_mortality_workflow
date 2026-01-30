@@ -45,16 +45,7 @@ Next, you will need to calculate the annual PM<sub>2.5</sub> concentration, down
 Mike Mills, Daniele Visioni, Jadwiga (Yaga) Richter. (2022). CESM2-WACCM6-SSP245. UCAR/NCAR - Climate and Global Dynamics Laboratory. https://doi.org/10.26024/0cs0-ev98. Accessed 20 May 2025.
 
 *Historical CESM-WACCM*  
-**find citation**
-
-
-### UKESM1
-*SSP2-4.5*  
-**find citation**  
-
-*Historical*  
-**find citation**  
-https://data.ceda.ac.uk/badc/cmip6/data/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r1i1p1f2  
+Danabasoglu, Gokhan (2019). NCAR CESM2-WACCM model output prepared for CMIP6 CMIP historical. Version 20190415.Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.10071
 
 ### Observations
 Gavin Shaddick, Matthew L. Thomas, Heresh Amini, David Broday, Aaron Cohen, Joseph Frostad, Amelia Green, Sophie Gumy, Yang Liu, Randall V. Martin, Annette Pruss-Ustun, Daniel Simpson, Aaron van Donkelaar, and Michael Brauer Environmental Science & Technology 2018 52 (16), 9069-9078 DOI: 10.1021/acs.est.8b02864  
