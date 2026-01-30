@@ -1,6 +1,8 @@
 # Mortality due to PM<sub>2.5</sub>
 
 ## Data inputs
+To run this portion of the example workflow, you will need to have available the following data:
+
 Relative Risk curves from the [Global Burden of Disease](https://doi.org/10.6069/vkdr-qy60)
 - `IHME_GBD_2021_AIR_POLLUTION_1990_2021_PM_{mortality_outcome}_MEAN_Y2022M01D31.CSV`  
 
