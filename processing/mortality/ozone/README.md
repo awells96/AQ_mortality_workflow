@@ -1,6 +1,8 @@
 # COPD Mortality due to surface ozone
 
 ## Data inputs
+To run this portion of the example workflow, you will need to have available the following data:
+
 - [Population](/processing/population) estimates on a 0.1° × 0.1° resolution
 - [Baseline Mortality Rate](/processing/bmr)
     - These are given at a country level and can be mapped to the same 0.1° × 0.1° resolution
