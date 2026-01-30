@@ -12,8 +12,11 @@ To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 en
 
 ## Pre-processing steps
 - Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
-- Write a .json file of file paths for data `0b__Write_file_paths_PM_components`
-- Converting mmr (kg/kg) to a concentration (µg/m³) requires calculating air density from pressure and temperature. Process temperature on pressure levels `0c_Monthly_temperature`
+- Write .json files of file paths for each mass mixing ratio in the directory `0b__Write_file_paths_PM_components`
+- Calculate the total mass mixing ratios for each component `Oc_Calculate_total_mmrs.ipynb`
+    - For mass mixing ratios of small particles in CESM2, the variables are usually separated by mode - for example, the so4 variables are called so4_a1, so4_a2, so4_a3, so4_c1, so4_c2, and so4_c3, where 1-3 are accumulation, aitken, and coarse modes, respectively, and "a" variables are for dry particles and "c" are for in-cloud. Likewise, for BC, you can look for bc_a1, bc_a2, etc. This may not be the case for other climate model output, this script calculated the sum of all modes for each variable. 
+- Converting mmr (kg/kg) to a concentration (µg/m³) requires calculating air density from pressure and temperature. Process temperature on pressure levels `0d_Monthly_temperature`
+
 
 ## Processing
 - Calculating the total PM<sub>2.5</sub> concentration from mass mixing ratios following the [Turnock et al. (2022)](https://doi.org/10.1029/2022EF002687) equation. 
