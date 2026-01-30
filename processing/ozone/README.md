@@ -44,15 +44,7 @@ Next, you will need to calculate the GBD relevent metric to integrate the data w
 Mike Mills, Daniele Visioni, Jadwiga (Yaga) Richter. (2022). CESM2-WACCM6-SSP245. UCAR/NCAR - Climate and Global Dynamics Laboratory. https://doi.org/10.26024/0cs0-ev98. Accessed 20 May 2025.
 
 *Historical CESM-WACCM*  
-**find citation**
-
-### UKESM1
-*SSP2-4.5*  
-**find citation**  
-
-*Historical*  
-**find citation**  
-https://data.ceda.ac.uk/badc/cmip6/data/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r1i1p1f2  
+Danabasoglu, Gokhan (2019). NCAR CESM2-WACCM model output prepared for CMIP6 CMIP historical. Version 20190415. Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.10071
 
 ### Observations
 Marissa N. DeLang, Jacob S. Becker, Kai-Lan Chang, Marc L. Serre, Owen R. Cooper, Martin G. Schultz, Sabine Schröder, Xiao Lu, Lin Zhang, Makoto Deushi, Beatrice Josse, Christoph A. Keller, Jean-François Lamarque, Meiyun Lin, Junhua Liu, Virginie Marécal, Sarah A. Strode, Kengo Sudo, Simone Tilmes, Li Zhang, Stephanie E. Cleland, Elyssa L. Collins, Michael Brauer, and J. Jason West: Mapping Yearly Fine Resolution Global Surface Ozone through the Bayesian Maximum Entropy Data Fusion of Observations and Model Output for 1990–2017
