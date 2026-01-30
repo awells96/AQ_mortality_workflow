@@ -1,6 +1,8 @@
 # PM<sub>2.5</sub> - Annual mean PM<sub>2.5</sub>
 
 ## Data inputs
+To run this portion of the example workflow, you will need to have available the following data:
+
 - [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
 - Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
 
@@ -11,6 +13,8 @@ To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 en
 - `T_CESM2_SSP245_01_2015-2100.nc`
 
 ## Pre-processing steps
+First, you will need to collate climate model data ready to calculate monthly PM<sub>2.5</sub> concentrations.
+
 - Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
 - Write .json files of file paths for each mass mixing ratio in the directory `0b__Write_file_paths_PM_components`
 - Calculate the total mass mixing ratios for each component `Oc_Calculate_total_mmrs.ipynb`
@@ -19,6 +23,8 @@ To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 en
 
 
 ## Processing
+Next, you will need to calculate the annual PM<sub>2.5</sub> concentration, downscale and bias correct the climate model data. 
+
 - Calculating the total PM<sub>2.5</sub> concentration from mass mixing ratios following the [Turnock et al. (2022)](https://doi.org/10.1029/2022EF002687) equation. 
     - Examples for CESM2 are given in `1__Monthly_PM2.5_calculation.ipynb`  
 - Calculate the annual mean using `2__Save_annual_PM2.5.ipynb`
