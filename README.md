@@ -19,7 +19,7 @@ We present an open-access workflow designed to bridge this gap, enabling researc
 The data required to run an example of this workflow and reproduce the figures are hosted externally:
 
 * **Data repository**: **TBD**
-* **Persistent identifier**: **TBD** (e.g. DOI or accession number)
+* **Persistent identifier**: 10.5281/zenodo.18436835
 
 The data directory structure is assumed by the scripts and should be preserved after download.
 
