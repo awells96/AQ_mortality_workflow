@@ -54,4 +54,4 @@ For questions or issues related to the workflow, please contact:
 
 ## 📝 License
 
-This repository is released under the **[License name]** license. See `LICENSE` for details.
+This repository is released under the **MIT** license. See `LICENSE` for details.
