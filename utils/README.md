@@ -16,7 +16,7 @@
 
 * `bilinear_interp` Bilinear interpolation
 
-* `create_global_country_map` Take list of country data and create global map
+* `create_global_country_map` Take list of country data and create global map - includes a file path that will need to be updated
 
 * `standardise_latlon` Standardise lat and lon coordinate names
 
