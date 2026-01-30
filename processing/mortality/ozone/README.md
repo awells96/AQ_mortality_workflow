@@ -9,7 +9,7 @@
 To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
 
 ## Pre-processing steps
-- **add some information about the testing steps** 
+- `Test_sample_size.ipynb` provides some code to test the number of samples needed for the parametric bootstrapping. 1000 samples would be optimal but would require a lot of compute time due to the high resolution nature of the data. This script compares smaller sample sizes with 1000 samples to identify the best fit. It calculates the global mortality using n samples for one year and produces figures to help determine the best sample size. 
 
 ## Processing
 Three of the components to the mortality calculations include a range of uncertainty, *BMR*, $\beta$ and *TMREL*. Therefore there are two parts to this processing:
