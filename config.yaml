@@ -1,0 +1,6 @@
+storage:
+  persistent:
+    root: "/glade/work/awells/workflow"
+
+  scratch:
+    root: "/deracho/scratch/awells/workflow"
