@@ -4,7 +4,7 @@
 
 To run this portion of the example workflow, you will need to have available the following data: 
 
-From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100)
+From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700)
 - `GBD_Country_Masks_0.10.mat`
 - `GBD_Region_Masks_0.10.mat`
 
@@ -17,7 +17,7 @@ To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here]
 
 First, you will need to convert country and region masks into a different file format, so they can be integrated with other data. 
 
-- Country and region masks (0.1°x0.1° resolution) from [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
+- Country and region masks (0.1°x0.1° resolution) from [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700) can be converted from .mat to .nc using `0a__GBD_country_masks.ipynb` and `0b__GBD_region_masks.ipynb`   
 
 ## Processing
 
