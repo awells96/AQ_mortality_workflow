@@ -10,9 +10,9 @@ authors:
 - family-names: "Gilleland"
   given-names: "Eric"
   orcid: "https://orcid.org/0000-0002-3169-6384"
-- family-names: "Gilleland"
-  given-names: "Eric"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Anderson"
+  given-names: "Brooke"
+  orcid: "https://orcid.org/0000-0002-5012-9035"
 title: "AQ_mortality_workflow"
 version: 1.0.0
 doi: 10.5281/zenodo.1234
