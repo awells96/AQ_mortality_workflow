@@ -55,16 +55,19 @@ McDuffie, E., Brauer, M., Martin, R., Spadaro, J., Burnett, R., Hammer, M., & va
 ## Search terms
 The following search terms were used for the example provided here.  
 
+You can download all causes at once, but it is easier to download one cause at a time. The file name type will download in this format `IHME-GBD_2023_DATA-{number/letter code}.csv`, you can rename these to be `IHME-GBD_2023_DATA-{mortality_outcome}.csv` using the bracketed values in the following list. If you give them different names you will need to adjust the `health_vars_in` in `1__GBD_BMR_to_netcdf.ipynb`.  
+
 GBD Estimate: Cause of death or injury  
 Measure: Deaths  
 Metric: Number, Percent, Rate (use rate to calculate BMR - rate is given as x per 100K)  
 Cause(s):  
-- Chronic obstructive pulmonary disease  
-- Lower Respiratory Infection  
-- Type II Diabetes  
-- Ischemic Heart Disease  
-- Stroke  
-- Tracheal, bronchus, and lung cancer  
+- Chronic obstructive pulmonary disease (COPD)  
+- Lower Respiratory Infection (LOWER_RESPIRATORY_INFECTIONS)  
+- Type II Diabetes (DIABETES)  
+- Ischemic Heart Disease (ISCHEMIC_HEART_DISEASE)  
+- Stroke (STROKE)  
+- Tracheal, bronchus, and lung cancer (LUNG_CANCER)
+- Alzheimer's disease and other dementias (DEMENTIA)  
   
 Location: Select all countries and territories  
 Age: All ages  
