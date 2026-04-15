@@ -9,7 +9,7 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4739100)
 - `GBD_Region_Masks_0.10.mat`
 
 From [VizHub data search](#search-terms)
-- `IHME-GBD_2021_DATA-{mortality_outcome}.csv`
+- `IHME-GBD_2023_DATA-{mortality_outcome}.csv`
 
 To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
 
