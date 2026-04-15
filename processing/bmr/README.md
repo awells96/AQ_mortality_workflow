@@ -33,8 +33,8 @@ Next, you will need to download data on baseline mortality rates and prepare the
 ### Expected file outputs
 `GBD_Country_Masks_0.10.nc`  
 `GBD_Region_Masks_0.10.nc`  
-`GBD_BMR_Country_{health_var}_1990-2009.nc`  
-`GBD_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
+`GBD23_BMR_Country_{health_var}_1990-2009.nc`  
+`GBD23_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
 
 ## Data citations
 
