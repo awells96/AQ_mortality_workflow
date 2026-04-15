@@ -11,7 +11,8 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700)
 From [VizHub data search](#search-terms)
 - `IHME-GBD_2023_DATA-{mortality_outcome}.csv`
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)
+This will be updated to the revised paper when 2023 data has been incorporated
+>To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)
 
 ## Pre-processing steps
 
@@ -39,9 +40,8 @@ Next, you will need to download data on baseline mortality rates and prepare the
 
 ### Mortality rates
 Global Burden of Disease Collaborative Network.  
-Global Burden of Disease Study 2021 (GBD 2021) Results.  
-Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2022.  
-Available from https://vizhub.healthdata.org/gbd-results/.  
+Global Burden of Disease Study 2023 (GBD 2023) Air Pollution Exposure Estimates and Risk Curves 1990-2023.  
+Seattle, United States of America: Institute for Health Metrics and Evaluation (IHME), 2026.
 
 ### Country masks 
 Available through the zenodo link associated with McDuffie et al. (2021).  
