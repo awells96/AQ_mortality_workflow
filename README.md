@@ -2,10 +2,12 @@
 
 > A reproducible workflow to calculate excess mortality due to changes in surface ozone and PM<sub>2.5</sub>.
 
-This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](doi when published)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436835), reproducing the results and figures in the paper. 
+This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](https://doi.org/10.22541/essoar.177170388.88002537/v1)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436835), reproducing the results and figures in the paper. 
 
-**Paper citation will be added when published**
-
+**A. F. Wells**, J. W. Hurrell, E. Gilleland, & G. B. Anderson (2026).  
+An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks
+to Assess Air Quality Mortality.
+ESS Open Archive. 21 February 2026. <https://doi.org/10.22541/essoar.177170388.88002537/v1>
 
 ## Abstract
 
@@ -18,8 +20,7 @@ We present an open-access workflow designed to bridge this gap, enabling researc
 
 The data required to run an example of this workflow and reproduce the figures are hosted externally:
 
-* **Data repository**: **TBD**
-* **Persistent identifier**: 10.5281/zenodo.18436835
+Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0) [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.18436835>
 
 The data directory structure is assumed by the scripts and should be preserved after download.
 
@@ -40,7 +41,8 @@ Figures 2 and 3 in the paper can be reproduced by running the scripts in `/plott
 
 If you use this workflow, please cite:
 
-> **Wells, A.F., Hurrell, J., Gilleland, E. and Anderson, G.B.** (2026). *An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality*. Journal. GeoHealth DOI: TBD
+> **A. F. Wells**, J. W. Hurrell, E. Gilleland, & G. B. Anderson (2026). An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks
+to Assess Air Quality Mortality. ESS Open Archive. 21 February 2026. <https://doi.org/10.22541/essoar.177170388.88002537/v1>
 
 A BibTeX entry will be added once the paper is published.
 
@@ -50,7 +52,7 @@ For questions or issues related to the workflow, please contact:
 
 * **Author**: Alice F. Wells
 * **Affiliation**: Colorado State University
-* **Email**: a.f.wells@colostate.edu
+* **Email**: awells96@rams.colostate.edu
 
 ## 📝 License
 
