@@ -11,7 +11,7 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700)
 From [VizHub data search](#search-terms)
 - `IHME-GBD_2021_DATA-{mortality_outcome}.csv`
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436835)
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)
 
 ## Pre-processing steps
 
