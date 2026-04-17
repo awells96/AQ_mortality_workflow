@@ -2,6 +2,7 @@
 # Common functions used in air_quality_project/
 # descriptions in utils_description.md
 
+# require_dir
 # adjust_longitude
 # lat_weighted_mean
 # land_filter
@@ -23,6 +24,21 @@ import xarray as xr
 import numpy as np
 import regionmask
 import xesmf as xe
+import pathlib
+
+
+# === Raise an error directory import ===
+def require_dir(path, name=None):
+    """Raise a clear error if a required directory does not exist."""
+    p = pathlib.Path(path)
+    if not p.exists():
+        label = name or str(p)
+        raise FileNotFoundError(
+            f"\n[Path Error] Required directory not found: {p}"
+            f"\n  '{label}' must exist before running this script."
+            f"\n  See the README for the expected directory structure."
+        )
+    return p
 
 
 # === Change longitude values from 0-360 to -180-180 ===
