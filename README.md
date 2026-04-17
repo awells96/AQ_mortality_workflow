@@ -29,57 +29,7 @@ The input data required to run an example of the workflow are hosted on Zenodo:
 
 > Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18436835
 
-Download and extract the dataset. **The directory structure inside the archive should be preserved** — the scripts assume a specific layout and will not find inputs correctly if files are moved or reorganised. When a notebook calls a specific directory it runs a check to see if the file path exists and throw an error if it does not. 
-
-#### Directory structure
-
-The directories for this workflow should be organised as follows:
-
-    WORK_ROOT/
-    ├── population/
-    │   ├── ...
-    │   └── ...
-    ├── bmr/
-    │   ├── ...
-    │   └── ...
-    ├── ozone/
-    │   ├── ...
-    │   └── ...
-    └── pm25/
-        ├── ...
-        └── ...
-
-
-    SCRATCH_ROOT/
-    ├── population/
-    │   ├── ...
-    │   └── ...
-    ├── bmr/
-    │   ├── ...
-    │   └── ...
-    ├── ozone/
-    │   ├── ...
-    │   └── ...
-    └── pm25/
-        ├── ...
-        └── ...
-
-    PLOTTING_ROOT/
-    ├── population/
-    │   ├── ...
-    │   └── ...
-    ├── bmr/
-    │   ├── ...
-    │   └── ...
-    ├── ozone/
-    │   ├── ...
-    │   └── ...
-    └── pm25/
-        ├── ...
-        └── ...
-        
-
-Set `WORK_DIR`, `SCRATCH_DIR`, and `PLOTTING_DIR` in `config.py` to set the paths of the top-level of each folder.
+Download and extract the dataset. **The directory structure inside the archive should be preserved** — the scripts assume a specific layout and will not find inputs correctly if files are moved or reorganised. When a notebook calls a specific directory it runs a check to see if the file path exists and throws an error if it does not. More on the file path structure below.
 
 ### 3. Configure file paths
 
@@ -96,7 +46,13 @@ PLOTTING_DIR = "/path/to/your/figures/"
 
 All other paths in the workflow are constructed relative to each root, so these are the only paths you should need to change to get started with the example dataset.
 
-### 4. Run the workflow
+### 4. Configure the directory structure
+
+The notebooks are set up so that you can configure your file path roots and the scripts will save and pull the relevant data relative to those roots. Therefore to save data in the correct location, and to ensure file paths are present, create the directory structure using the outline below.
+
+The directory structure is explained [here](https://github.com/awells96/AQ_mortality_workflow/blob/d840c3f7254259db3cd58c5d72893dbef205cbe5/directory_structure.md). 
+
+### 5. Run the workflow
 
 The workflow is structured into three parallel tracks — `population`, `bmr`, and climate variables (`ozone` and `pm25`) — before converging in the `mortality` step. A recommended execution order is:
 
@@ -107,7 +63,7 @@ The workflow is structured into three parallel tracks — `population`, `bmr`, a
 
 Each script is designed to be run independently once its inputs are available. To reproduce Figures 2 and 3 from the paper, run the scripts in `/plotting/mortality/` after completing the steps above.
 
-### 5. (Optional) Edit the workflow
+### 6. (Optional) Edit the workflow
 
 If you are happy that you understand how the workflow operates, you can make your own edits. For example you can apply your own climate variable data or use different exposure functions.
 
@@ -126,8 +82,6 @@ If you use this workflow, please cite:
 > **A. F. Wells**, J. W. Hurrell, E. Gilleland, & G. B. Anderson (2026). An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks
 to Assess Air Quality Mortality. ESS Open Archive. 21 February 2026. <https://doi.org/10.22541/essoar.177170388.88002537/v1>
 
-A BibTeX entry will be added once the paper is published.
-
 ## Contact
 
 For questions or issues related to the workflow, please contact:
@@ -139,3 +93,10 @@ For questions or issues related to the workflow, please contact:
 ## 📝 License
 
 This repository is released under the **MIT** license. See `LICENSE` for details.
+
+[![GitHub release](https://img.shields.io/github/v/release/awells96/AQ_mortality_workflow)](https://github.com/awells96/AQ_mortality_workflow/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/awells96/AQ_mortality_workflow?color=blue)](https://github.com/awells96/AQ_mortality_workflow/blob/main/LICENSE)
+
+[![GitHub stars](https://img.shields.io/github/stars/awells96/AQ_mortality_workflow)](https://github.com/awells96/AQ_mortality_workflow)
+[![GitHub forks](https://img.shields.io/github/forks/awells96/AQ_mortality_workflow)](https://github.com/awells96/AQ_mortality_workflow/fork)
+</div>
