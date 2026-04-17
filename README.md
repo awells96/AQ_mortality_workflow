@@ -9,31 +9,113 @@ An Open-Access Workflow Combining Climate Model Projections with Epidemiological
 to Assess Air Quality Mortality.
 ESS Open Archive. 21 February 2026. <https://doi.org/10.22541/essoar.177170388.88002537/v1>
 
+## Getting Started
+
+### 1. Fork and clone the repository
+
+To use or adapt this workflow, start by forking the repository to your own GitHub account:
+
+1. Click the **Fork** button at the top-right of this page.
+2. Once forked, clone your copy locally:
+
+```bash
+git clone https://github.com/<your-username>/AQ_mortality_workflow.git
+cd AQ_mortality_workflow
+```
+
+### 2. Download the example data
+
+The input data required to run an example of the workflow are hosted on Zenodo:
+
+> Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18436835
+
+Download and extract the dataset. **The directory structure inside the archive should be preserved** — the scripts assume a specific layout and will not find inputs correctly if files are moved or reorganised. When a notebook calls a specific directory it runs a check to see if the file path exists and throw an error if it does not. 
+
+#### Directory structure
+
+The directories for this workflow should be organised as follows:
+
+    WORK_ROOT/
+    ├── population/
+    │   ├── ...
+    │   └── ...
+    ├── bmr/
+    │   ├── ...
+    │   └── ...
+    ├── ozone/
+    │   ├── ...
+    │   └── ...
+    └── pm25/
+        ├── ...
+        └── ...
+
+
+    SCRATCH_ROOT/
+    ├── population/
+    │   ├── ...
+    │   └── ...
+    ├── bmr/
+    │   ├── ...
+    │   └── ...
+    ├── ozone/
+    │   ├── ...
+    │   └── ...
+    └── pm25/
+        ├── ...
+        └── ...
+
+    PLOTTING_ROOT/
+    ├── population/
+    │   ├── ...
+    │   └── ...
+    ├── bmr/
+    │   ├── ...
+    │   └── ...
+    ├── ozone/
+    │   ├── ...
+    │   └── ...
+    └── pm25/
+        ├── ...
+        └── ...
+        
+
+Set `WORK_DIR`, `SCRATCH_DIR`, and `PLOTTING_DIR` in `config.py` to set the paths of the top-level of each folder.
+
+### 3. Configure file paths
+
+Open `config.py` and update the root data path to point to wherever you extracted the example data on your machine. For example:
+
+```python
+# config.py
+
+# Set this to the root of the downloaded example data directory
+WORK_DIR = "/path/to/your/working/data"
+SCRATCH_DIR = "/path/to/your/scratch/data"
+PLOTTING_DIR = "/path/to/your/figures/"
+```
+
+All other paths in the workflow are constructed relative to each root, so these are the only paths you should need to change to get started with the example dataset.
+
+### 4. Run the workflow
+
+The workflow is structured into three parallel tracks — `population`, `bmr`, and climate variables (`ozone` and `pm25`) — before converging in the `mortality` step. A recommended execution order is:
+
+1. Run `population` processing scripts
+2. Run `bmr` processing scripts
+3. Run `ozone` and `pm25` processing scripts (these can be run in parallel)
+4. Run the `mortality` scripts for each variable
+
+Each script is designed to be run independently once its inputs are available. To reproduce Figures 2 and 3 from the paper, run the scripts in `/plotting/mortality/` after completing the steps above.
+
+### 5. (Optional) Edit the workflow
+
+If you are happy that you understand how the workflow operates, you can make your own edits. For example you can apply your own climate variable data or use different exposure functions.
+
 ## Abstract
 
 Surface-level air pollution is a major contributor to human mortality worldwide, and future climate change is expected to alter concentrations of pollutants such as ozone and particulate matter. Estimating the health burden of these changes requires combining climate model projections with epidemiological frameworks, such as those developed in the Global Burden of Disease (GBD) study. However, significant barriers hinder this integration. Climate model outputs differ from health metrics in spatial resolution, temporal aggregation, and pollutant definitions. For example, GBD quantifies ozone exposure as the highest seasonal average of 8-hour daily maximum concentrations, while most climate models provide hourly or monthly mean data. Furthermore, model outputs often require bias correction and spatial downscaling to align with exposure-response functions derived from observational data.
 
 We present an open-access workflow designed to bridge this gap, enabling researchers to process climate model data for health impact assessments of air quality. The workflow processes climate model pollutant data to align with GBD metrics, applies bias correction and downscaling methods, and calculates mortality using established GBD exposure-response functions and baseline demographic data. This approach allows consistent, reproducible estimation of future health impacts across scenarios and models. By making the workflow publicly available, we aim to lower barriers for interdisciplinary research and support collaboration between climate scientists and epidemiologists. This work provides a foundation for quantifying the health implications of changing air quality under future climate conditions, improving decision-making around mitigation and adaptation strategies.
-
-
-## Data availability
-
-The data required to run an example of this workflow and reproduce the figures are hosted externally:
-
-Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0) [Data set]. Zenodo. <https://doi.org/10.5281/zenodo.18436835>
-
-The data directory structure is assumed by the scripts and should be preserved after download.
-
-
-## Running the workflow and reproducing the paper figures
-
-The workflow is designed to be run with three parallel tracks, reflecting the description in the paper and the figure below.
-
-One could start with `population` processing, then `bmr` and finally processing the climate variables in `ozone` and `pm25`. Then the `mortality` directory is ready to execute for each variable.
-
-Each script is intended to be runnable independently once its inputs exist.
-
-Figures 2 and 3 in the paper can be reproduced by running the scripts in `/plotting/mortality/`
 
 <img src="Workflow_figure.png" alt="drawing" width="500"/>
 
