@@ -2,6 +2,7 @@
 # Common functions used in air_quality_project/
 # descriptions in utils_description.md
 
+# require_dir
 # adjust_longitude
 # lat_weighted_mean
 # land_filter
@@ -16,13 +17,27 @@
 # molmol_to_ppb
 # minus_one_month
 
-import os
 import json
 import cftime
 import xarray as xr
 import numpy as np
 import regionmask
 import xesmf as xe
+import pathlib
+
+
+# === Raise an error directory import ===
+def require_dir(path, name=None):
+    """Raise a clear error if a required directory does not exist."""
+    p = pathlib.Path(path)
+    if not p.exists():
+        label = name or str(p)
+        raise FileNotFoundError(
+            f"\n[Path Error] Required directory not found: {p}"
+            f"\n  '{label}' must exist before running this script."
+            f"\n  See the README for the expected directory structure."
+        )
+    return p
 
 
 # === Change longitude values from 0-360 to -180-180 ===
@@ -79,13 +94,10 @@ def bilinear_interp(in_grid, target_grid):
 
 
 # === Take list of country data and create global map ===
-def create_global_country_map(da):
-    # Path config
-    MASKS_DIR = "/glade/work/awells/air_quality/BMR/masks/country/"
-
+def create_global_country_map(da, masks_dir):
     # Load in country mask
     mask_file = "GBD_Country_Masks_0.10.nc"
-    mask_path = os.path.join(MASKS_DIR, mask_file)
+    mask_path = pathlib.Path(masks_dir) / mask_file
     masks = xr.open_dataarray(mask_path)
 
     # Create DataArray filled with NaNs
@@ -95,8 +107,6 @@ def create_global_country_map(da):
         dims=["lat", "lon"]
     )
 
-    # Loop over countries, select the data for each country and apply to
-    # empty array using the country mask
     for i in range(len(masks.country)):
         mask = masks.isel(country=i)
         country = masks.isel(country=i)["country"]
