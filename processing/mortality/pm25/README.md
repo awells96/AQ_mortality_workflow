@@ -35,15 +35,15 @@ Three of the components to the mortality calculations include a range of uncerta
     - Merge yearly, regional and outcome data files using `4b__Merge_regional_mortality.ipynb`.
 
 ### Expected file outputs
-`Mortality_{outcome}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Mortality_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Mortality_Country_sum_{model}_{scenario}_{dates-yyyy}.nc`  
-`Global_mortality_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
-`Global_mortality_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Regional_mortality_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
-`Regional_mortality_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_{GBD_version}_{outcome}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_{GBD_version}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_Country_sum_{GBD_version}_{model}_{scenario}_{dates-yyyy}.nc`  
+`Global_mortality_{GBD_version}_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
+`Global_mortality_{GBD_version}_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Global_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Regional_mortality_{GBD_version}_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
+`Regional_mortality_{GBD_version}_{outcome}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Regional_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
 
 ## Mortality equations
 
