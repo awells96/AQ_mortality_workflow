@@ -8,7 +8,8 @@ To run this portion of the example workflow, you will need to have available the
     - These are given at a country level and can be mapped to the same 0.1° × 0.1° resolution
 - [OSDMA8 projections](/processing/ozone)
 
-To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
+- When the example has been updated using the GBD 2023, these links will be updated, along with the paper.
 
 ## Pre-processing steps
 - `Test_sample_size.ipynb` provides some code to test the number of samples needed for the parametric bootstrapping. 1000 samples would be optimal but would require a lot of compute time due to the high resolution nature of the data. This script compares smaller sample sizes with 1000 samples to identify the best fit. It calculates the global mortality using n samples for one year and produces figures to help determine the best sample size. 
@@ -30,12 +31,12 @@ Three of the components to the mortality calculations include a range of uncerta
     - Merge yearly and regional data files using `4b__Merge_regional_mortality.ipynb`.
 
 ### Expected file outputs
-`Mortality_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Mortality_Country_sum_{model}_{scenario}_{dates-yyyy}.nc`  
-`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
-`Global_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
-`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
-`Regional_mortality_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_{GBD_version}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Mortality_Country_sum_{GBD_version}_{model}_{scenario}_{dates-yyyy}.nc`  
+`Global_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{yyyy}.nc` 
+`Global_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
+`Regional_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{region}_{yyyy}.nc`  
+`Regional_mortality_{GBD_version}_{n_samples}_{model}_{scenario}_{ens_num}_{dates-yyyy}.nc`  
 
 ## Mortality equations
 
@@ -60,7 +61,7 @@ RR(x, y) = e^{\beta \, (OSDMA8(x, y) - TMREL)}
 ```
 <br>
 
-where *[OSDMA8(x, y)](/processing/ozone)* is the Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) at point (x, y) and *TMREL* is the Theoretical Minimum Risk Exposure Level provided by the [Global Burden of Disease (2021)](https://doi.org/10.1016/S0140-6736(24)00933-4). $\beta$ is calculated using the relationship provided by the GBD.
+where *[OSDMA8(x, y)](/processing/ozone)* is the Highest seasonal (6-month) average of 8-hour daily maximum ozone concentrations across 15 months (Jan-Mar) at point (x, y) and *TMREL* is the Theoretical Minimum Risk Exposure Level provided by the [Global Burden of Disease (2023)](https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023). $\beta$ is calculated using the relationship provided by the GBD.
 
 ## Global Burden of Disease (GBD)
 The GBD provide relative risk estimates for a range of risk factors, including surface ozone and PM<sub>2.5</sub>.  
@@ -68,6 +69,3 @@ The GBD provide relative risk estimates for a range of risk factors, including s
 COPD is the only included outcome for ambient ozone pollution. The GBD perform a literature review of studies examining long-term ozone exposure and COPD and use the meta-regression—Bayesian, regularised, trimmed (MR-BRT) meta-regression tool to conduct a meta-analysis on those studies. The inverse-standard error weighted meta-analysis provided an estimated relative risk of 1.074 (95% CI 1.014–1.137) per 10 ppb. This is used to calculate $\beta$. 
   
 The TMREL is based on the exposure distribution from the ACS CPS-II study ([Turner et al., 2016](https://doi.org/10.1164/rccm.201508-1633oc)). It is a uniform distribution around the minimum and 5th percentile values observed in the cohort, ~U(29.1, 35.7), in ppb.  
-
-
-

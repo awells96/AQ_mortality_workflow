@@ -9,10 +9,12 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700)
 - `GBD_Region_Masks_0.10.mat`
 
 From [VizHub data search](#search-terms)
-- `IHME-GBD_2023_DATA-{mortality_outcome}.csv`
+- `IHME-GBD_2023_DATA-{mortality_outcome}.csv`  
 
-This will be updated to the revised paper when 2023 data has been incorporated
->To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)
+Previous downloads may be tagged `GBD_2021`. When using these, adjust variable `GBD_version` to `"GBD21"`.
+
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
+- When the example has been updated using the GBD 2023, these links will be updated, along with the paper. 
 
 ## Pre-processing steps
 
@@ -33,8 +35,8 @@ Next, you will need to download data on baseline mortality rates and prepare the
 ### Expected file outputs
 `GBD_Country_Masks_0.10.nc`  
 `GBD_Region_Masks_0.10.nc`  
-`GBD23_BMR_Country_{health_var}_1990-2009.nc`  
-`GBD23_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
+`{GBD_version}_BMR_Country_{health_var}_1990-2009.nc`  
+`{GBD_version}_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
 
 ## Data citations
 
