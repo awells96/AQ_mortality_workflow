@@ -17,6 +17,7 @@
 # molmol_to_ppb
 # minus_one_month
 
+import os
 import json
 import cftime
 import xarray as xr
@@ -126,6 +127,14 @@ _MODEL_CONFIG = {
         "hist": {
             "ensemble_members": [1],
             "years": range(1990, 2010)
+        },
+        "G6-1.5K": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2035, 2084)
+        },
+        "G6-1.5K-HiLLA": {
+            "ensemble_members": [1, 2, 3],
+            "years": range(2035, 2084)
         }
     },
 
