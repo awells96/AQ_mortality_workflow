@@ -9,9 +9,12 @@ From [Duffey et al. (2021)](https://doi.org/10.5281/zenodo.4642700)
 - `GBD_Region_Masks_0.10.mat`
 
 From [VizHub data search](#search-terms)
-- `IHME-GBD_2021_DATA-{mortality_outcome}.csv`
+- `IHME-GBD_2023_DATA-{mortality_outcome}.csv`  
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)
+Previous downloads may be tagged `GBD_2021`. When using these, adjust variable `GBD_version` to `"GBD21"`.
+
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
+- When the example has been updated using the GBD 2023, these links will be updated, along with the paper. 
 
 ## Pre-processing steps
 
@@ -32,16 +35,15 @@ Next, you will need to download data on baseline mortality rates and prepare the
 ### Expected file outputs
 `GBD_Country_Masks_0.10.nc`  
 `GBD_Region_Masks_0.10.nc`  
-`GBD_BMR_Country_{health_var}_1990-2009.nc`  
-`GBD_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
+`{GBD_version}_BMR_Country_{health_var}_1990-2009.nc`  
+`{GBD_version}_BMR_Country_{health_var}_newlabels_1990-2009.nc`  
 
 ## Data citations
 
 ### Mortality rates
 Global Burden of Disease Collaborative Network.  
-Global Burden of Disease Study 2021 (GBD 2021) Results.  
-Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2022.  
-Available from https://vizhub.healthdata.org/gbd-results/.  
+Global Burden of Disease Study 2023 (GBD 2023) Air Pollution Exposure Estimates and Risk Curves 1990-2023.  
+Seattle, United States of America: Institute for Health Metrics and Evaluation (IHME), 2026.
 
 ### Country masks 
 Available through the zenodo link associated with McDuffie et al. (2021).  
@@ -55,16 +57,19 @@ McDuffie, E., Brauer, M., Martin, R., Spadaro, J., Burnett, R., Hammer, M., & va
 ## Search terms
 The following search terms were used for the example provided here.  
 
+You can download all causes at once, but it is easier to download one cause at a time. The file name type will download in this format `IHME-GBD_2023_DATA-{number/letter code}.csv`, you can rename these to be `IHME-GBD_2023_DATA-{mortality_outcome}.csv` using the bracketed values in the following list. If you give them different names you will need to adjust the `health_vars_in` in `1__GBD_BMR_to_netcdf.ipynb`.  
+
 GBD Estimate: Cause of death or injury  
 Measure: Deaths  
 Metric: Number, Percent, Rate (use rate to calculate BMR - rate is given as x per 100K)  
 Cause(s):  
-- Chronic obstructive pulmonary disease  
-- Lower Respiratory Infection  
-- Type II Diabetes  
-- Ischemic Heart Disease  
-- Stroke  
-- Tracheal, bronchus, and lung cancer  
+- Chronic obstructive pulmonary disease (COPD)  
+- Lower Respiratory Infection (LOWER_RESPIRATORY_INFECTIONS)  
+- Type II Diabetes (DIABETES)  
+- Ischemic Heart Disease (ISCHEMIC_HEART_DISEASE)  
+- Stroke (STROKE)  
+- Tracheal, bronchus, and lung cancer (LUNG_CANCER)
+- Alzheimer's disease and other dementias (DEMENTIA)  
   
 Location: Select all countries and territories  
 Age: All ages  
