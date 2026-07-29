@@ -27,7 +27,7 @@ cd AQ_mortality_workflow
 
 The input data required to run an example of the workflow are hosted on Zenodo:
 
-> Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18436835
+> Wells, A. F., Anderson, G. B., Hurrell, J. W.& Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (Version v1.1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21683157
 
 Download and extract the dataset. **The directory structure inside the archive should be preserved** — the scripts assume a specific layout and will not find inputs correctly if files are moved or reorganised. When a notebook calls a specific directory it runs a check to see if the file path exists and throws an error if it does not. More on the file path structure below.
 
