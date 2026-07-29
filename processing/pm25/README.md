@@ -3,7 +3,8 @@
 ## Data inputs
 To run this portion of the example workflow, you will need to have available the following data:
 
-- [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
+- For GBD 2021: [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
+- For GBD 2023: [IHME (2026](https://doi.org/10.6069/K4TW-Q814) observations
 - Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
 
 To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 1 with the following data, which can be found [here](ADD DOI FOR ZENODO UPLOAD):
@@ -15,7 +16,8 @@ To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 en
 ## Pre-processing steps
 First, you will need to collate climate model data ready to calculate monthly PM<sub>2.5</sub> concentrations.
 
-- Convert obervations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
+- For GBD 2021: Convert observations from R data to netcdf using `0a_Save_DIMAQ_PM2.5_data.ipynb`
+- For GBD 2023: Convert observations from .tiff files to netcdf using `0a__Save_IHME_PM2.5_data.ipynb`
 - Write .json files of file paths for each mass mixing ratio in the directory `0b__Write_file_paths_PM_components`
 - Calculate the total mass mixing ratios for each component `Oc_Calculate_total_mmrs.ipynb`
     - For mass mixing ratios of small particles in CESM2, the variables are usually separated by mode - for example, the so4 variables are called so4_a1, so4_a2, so4_a3, so4_c1, so4_c2, and so4_c3, where 1-3 are accumulation, aitken, and coarse modes, respectively, and "a" variables are for dry particles and "c" are for in-cloud. Likewise, for BC, you can look for bc_a1, bc_a2, etc. This may not be the case for other climate model output, this script calculated the sum of all modes for each variable. 
@@ -25,7 +27,7 @@ First, you will need to collate climate model data ready to calculate monthly PM
 ## Processing
 Next, you will need to calculate the annual PM<sub>2.5</sub> concentration, downscale and bias correct the climate model data. 
 
-- Calculating the total PM<sub>2.5</sub> concentration from mass mixing ratios following the [Turnock et al. (2022)](https://doi.org/10.1029/2022EF002687) equation. 
+- Calculating the total PM<sub>2.5</sub> concentration from mass mixing ratios following the [Turnock et al. (2020)](https://doi.org/10.5194/acp-20-14547-2020) equation. 
     - Examples for CESM2 are given in `1__Monthly_PM2.5_calculation.ipynb`  
 - Calculate the annual mean using `2__Save_annual_PM2.5.ipynb`
 - Bias correct the climate model product using `3__Bias_correct_PM25.ipynb` with the observations and historical data. 
@@ -48,8 +50,12 @@ Mike Mills, Daniele Visioni, Jadwiga (Yaga) Richter. (2022). CESM2-WACCM6-SSP245
 Danabasoglu, Gokhan (2019). NCAR CESM2-WACCM model output prepared for CMIP6 CMIP historical. Version 20190415.Earth System Grid Federation. https://doi.org/10.22033/ESGF/CMIP6.10071
 
 ### Observations
+*GBD 2021*  
 Gavin Shaddick, Matthew L. Thomas, Heresh Amini, David Broday, Aaron Cohen, Joseph Frostad, Amelia Green, Sophie Gumy, Yang Liu, Randall V. Martin, Annette Pruss-Ustun, Daniel Simpson, Aaron van Donkelaar, and Michael Brauer Environmental Science & Technology 2018 52 (16), 9069-9078 DOI: 10.1021/acs.est.8b02864  
 *Saved as an .Rdata file in appendix*  
 
+*GBD 2023*   
+Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2023 (GBD 2023) Air Pollution Exposure Estimates and Risk Curves 1990-2023. Seattle, United States of America: Institute for Health Metrics and Evaluation (IHME), 2026.   
+*Ambient Particulate Matter Exposure Estimates [CSV] file download*
 
 
