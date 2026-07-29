@@ -73,7 +73,7 @@ Surface-level air pollution is a major contributor to human mortality worldwide,
 
 We present an open-access workflow designed to bridge this gap, enabling researchers to process climate model data for health impact assessments of air quality. The workflow processes climate model pollutant data to align with GBD metrics, applies bias correction and downscaling methods, and calculates mortality using established GBD exposure-response functions and baseline demographic data. This approach allows consistent, reproducible estimation of future health impacts across scenarios and models. By making the workflow publicly available, we aim to lower barriers for interdisciplinary research and support collaboration between climate scientists and epidemiologists. This work provides a foundation for quantifying the health implications of changing air quality under future climate conditions, improving decision-making around mitigation and adaptation strategies.
 
-<img src="Workflow_figure.png" alt="drawing" width="500"/>
+<img src="Workflow_figure.jpg" alt="drawing" width="500"/>
 
 ## Citation
 

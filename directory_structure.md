@@ -7,16 +7,18 @@ Your `WORK_ROOT` is where you will host your final output data. The starred dire
 The `WORK_ROOT` structure is as follows:
 
     WORK_ROOT/
-    ├── SSP_pop/
-    │   └── SSP2/
     ├── BMR/
     │   └── masks/
     │       ├── country/
     │       └── region/
-    ├── O3_obs/
-    ├── PM2.5_obs/
     ├── GBD21/
     │   └── RR_curves/
+    ├── GBD23/
+    │   └── RR_curves/
+    ├── SSP_pop/
+    │   └── SSP2/
+    ├── O3_obs/
+    ├── PM2.5_obs/
     └── {model}/
         ├── ozone/
         │   ├── file_paths*/
