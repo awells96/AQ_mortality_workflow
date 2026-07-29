@@ -15,6 +15,6 @@ authors:
   orcid: "https://orcid.org/0000-0002-5012-9035"
 title: "AQ_mortality_workflow"
 version: 1.0.0
-doi: 10.5281/zenodo.1234
+doi: https://doi.org/10.5281/zenodo.21691473
 date-released: 2026-01-30
 url: "https://github.com/awells96/AQ_mortality_workflow"
