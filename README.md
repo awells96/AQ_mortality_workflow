@@ -2,7 +2,7 @@
 
 > A reproducible workflow to calculate excess mortality due to changes in surface ozone and PM<sub>2.5</sub>.
 
-This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](https://doi.org/10.22541/essoar.177170388.88002537/v1)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436835), reproducing the results and figures in the paper. 
+This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](https://doi.org/10.22541/essoar.177170388.88002537/v1)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436834), reproducing the results and figures in the paper. 
 
 **A. F. Wells**, J. W. Hurrell, E. Gilleland, & G. B. Anderson (2026).  
 An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks
