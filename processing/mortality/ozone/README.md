@@ -8,8 +8,7 @@ To run this portion of the example workflow, you will need to have available the
     - These are given at a country level and can be mapped to the same 0.1° × 0.1° resolution
 - [OSDMA8 projections](/processing/ozone)
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
-- When the example has been updated using the GBD 2023, these links will be updated, along with the paper.
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436834)  
 
 ## Pre-processing steps
 - `Test_sample_size.ipynb` provides some code to test the number of samples needed for the parametric bootstrapping. 1000 samples would be optimal but would require a lot of compute time due to the high resolution nature of the data. This script compares smaller sample sizes with 1000 samples to identify the best fit. It calculates the global mortality using n samples for one year and produces figures to help determine the best sample size. 
