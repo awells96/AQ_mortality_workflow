@@ -4,10 +4,10 @@
 To run this portion of the example workflow, you will need to have available the following data:
 
 - For GBD 2021: [Shaddick et al. (2018)](https://doi.org/10.1021/acs.est.8b02864) observations
-- For GBD 2023: [IHME (2026](https://doi.org/10.6069/K4TW-Q814) observations
+- For GBD 2023: [IHME (2026)](https://doi.org/10.6069/K4TW-Q814) observations
 - Monthly mass mixing ratios (mmr) for black carbon, sea salt, primary and secondary organic aerosols, dust and sulfate aerosol. 
 
-To follow the example in the [paper](ADD DOI FOR PAPER) (CESM2-WACCM SSP2-4.5 ensemble 1) start at step 1 with the following data, which can be found [here](ADD DOI FOR ZENODO UPLOAD):
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) (CESM2-WACCM SSP2-4.5 ensemble 1) start with script `1__Monthly_PM2.5_calculation.ipynb` with the following data, which can be found [here](https://doi.org/10.5281/zenodo.18436834):
 - `{VAR}_mmr_CESM2_SSP245_01_2015-2100.nc`
 - `{VAR}_mmr_CESM2_hist_01_2015-2100.nc`
 - `T_CESM2_hist_01_1990-2010.nc`
@@ -20,7 +20,7 @@ First, you will need to collate climate model data ready to calculate monthly PM
 - For GBD 2023: Convert observations from .tiff files to netcdf using `0a__Save_IHME_PM2.5_data.ipynb`
 - Write .json files of file paths for each mass mixing ratio in the directory `0b__Write_file_paths_PM_components`
 - Calculate the total mass mixing ratios for each component `Oc_Calculate_total_mmrs.ipynb`
-    - For mass mixing ratios of small particles in CESM2, the variables are usually separated by mode - for example, the so4 variables are called so4_a1, so4_a2, so4_a3, so4_c1, so4_c2, and so4_c3, where 1-3 are accumulation, aitken, and coarse modes, respectively, and "a" variables are for dry particles and "c" are for in-cloud. Likewise, for BC, you can look for bc_a1, bc_a2, etc. This may not be the case for other climate model output, this script calculated the sum of all modes for each variable. 
+    - For mass mixing ratios of small particles in CESM2, the variables are usually separated by mode - for example, the so4 variables are called so4_a1, so4_a2, so4_a3, so4_c1, so4_c2, and so4_c3, where 1-3 are accumulation, aitken, and coarse modes, respectively, and "a" variables are for dry particles and "c" are for in-cloud. Likewise, for BC, you can look for bc_a1, bc_a2, etc. This may not be the case for other climate model output, this script calculates the sum of all modes for each variable. 
 - Converting mmr (kg/kg) to a concentration (µg/m³) requires calculating air density from pressure and temperature. Process temperature on pressure levels `0d_Monthly_temperature`
 
 
