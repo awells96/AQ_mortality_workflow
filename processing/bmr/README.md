@@ -13,8 +13,7 @@ From [VizHub data search](#search-terms)
 
 Previous downloads may be tagged `GBD_2021`. When using these, adjust variable `GBD_version` to `"GBD21"`.
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
-- When the example has been updated using the GBD 2023, these links will be updated, along with the paper. 
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1), data can be found [here](https://doi.org/10.5281/zenodo.18436834)  
 
 ## Pre-processing steps
 
