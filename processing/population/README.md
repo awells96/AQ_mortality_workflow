@@ -5,9 +5,9 @@ To run this portion of the example workflow, you will need to have available the
 
 From [Gao et al. (2020)](https://doi.org/10.7910/DVN/TLJ99B)
 - `baseYr_total_2000.nc4`
-- `ssp2_total_{year}.nc4`
+- `{ssp_scenario}_total_{year}.nc4`
 
-To follow the example in the [paper](ADD DOI FOR PAPER) data can be found [here](ADD DOI FOR ZENODO UPLOAD)
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](10.5281/zenodo.18436834)
 
 ## Processing  
 The population data used in this example are at a 1km resolution (0.0083° x 0.0083°) which is too high relative to the ozone and PM2.5 observations which are at 0.1° x 0.1° resolution so you will need to aggregate the data to a new spatial grid. 
@@ -20,11 +20,11 @@ The population data used in this example are at a 1km resolution (0.0083° x 0.0
 - The total population by country or region can be calculated with `3a__Save_country_level_population.ipynb` and `3b__Save_region_level_population.ipynb` 
 
 ### Expected file outputs  
-`ssp2_coarse_grid_{year}.nc`  
-`ssp2_coarse_grid_2000-2100.nc`  
-`ssp2_coarse_grid_annual_2000-2100.nc`  
-`ssp2_country_level_2000-2100.nc`  
-`ssp2_region_level_2000-2100.nc`  
+`{ssp_scenario}_coarse_grid_{year}.nc`  
+`{ssp_scenario}_coarse_grid_2000-2100.nc`  
+`{ssp_scenario}_coarse_grid_annual_2000-2100.nc`  
+`{ssp_scenario}_country_level_2000-2100.nc`  
+`{ssp_scenario}_region_level_2000-2100.nc`  
 
 ## Data citations  
 Gao, Jing, 2020, "Global 1-km Downscaled Population Grids, SSP-Consistent Projections and Base Year, v1.01 (2000 - 2100)", https://doi.org/10.7910/DVN/TLJ99B, Harvard Dataverse, V1
