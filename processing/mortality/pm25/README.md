@@ -3,7 +3,7 @@
 ## Data inputs
 To run this portion of the example workflow, you will need to have available the following data:
 
-Relative Risk curves from the [Global Burden of Disease](https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023)
+Relative Risk curves from the [Global Burden of Disease](https://doi.org/10.6069/K4TW-Q814)
 - `IHME_GBD_2023_AIR_POLLUTION_{date_range}_PM_{mortality_outcome}_MEAN_Y{year}M{month}D{day}.CSV`  
 
 [Population](/processing/population) estimates on a 0.1° × 0.1° resolution  
@@ -13,8 +13,7 @@ Relative Risk curves from the [Global Burden of Disease](https://ghdx.healthdata
 
 [Annual PM<sub>2.5</sub>](/processing/pm25) projections
 
-To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436835)  
-- When the example has been updated using the GBD 2023, these links will be updated, along with the paper.
+To follow the example in the [paper](https://doi.org/10.22541/essoar.177170388.88002537/v1) data can be found [here](https://doi.org/10.5281/zenodo.18436834)  
 
 ## Pre-processing steps
 - The RR curves from the GBD 2023 (and previous GBD versions) can be converted from csv files to netCDFs using `0__Save_RR_curves_GBD.ipynb`.
@@ -62,13 +61,13 @@ AF(x, y) = \frac{1 - RR(x, y)}{RR(x, y)}
 ```
 <br>
 
-where *RR(x,y)* is the Relative Risk at point (x, y) provided by the [Global Burden of Disease (2023)](https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023).
+where *RR(x,y)* is the Relative Risk at point (x, y) provided by the [Global Burden of Disease (2023)](https://doi.org/10.6069/K4TW-Q814).
 
 ## Global Burden of Disease (GBD)
 The GBD provide relative risk estimates for a range of risk factors, including PM<sub>2.5</sub>.  
 
 There are six included outcomes for particulate matter pollution. The GBD estimate the particulate-matter-attributable burden of disease based on the relation of long-term exposure to PM2.5 with ischaemic heart disease, stroke (ischaemic and haemorrhagic), COPD, lung cancer, acute lower respiratory infection, and type 2 diabetes. 
-The GBD perform a literature review of studies and use the meta-regression—Bayesian, regularised, trimmed (MR-BRT) meta-regression tool to conduct a meta-analysis on those studies. The RR data from the GBD can be found through the [Global Burden of Disease](https://ghdx.healthdata.org/record/ihme-data/gbd-2023-air-pollution-exposure-estimates-1990-2023).
+The GBD perform a literature review of studies and use the meta-regression—Bayesian, regularised, trimmed (MR-BRT) meta-regression tool to conduct a meta-analysis on those studies. The RR data from the GBD can be found through the [Global Burden of Disease](https://doi.org/10.6069/K4TW-Q814).
 
 The TMREL is based on outdoor air pollution cohort studies exposure distributions conducted in North America. It is a uniform distribution around the minimum and 5th percentile values observed in the cohort, ~U(2.4, 5.9), in µg/m3. Relative risk curves are scaled using the TMREL.
 
