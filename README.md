@@ -2,7 +2,7 @@
 
 > A reproducible workflow to calculate excess mortality due to changes in surface ozone and PM<sub>2.5</sub>.
 
-This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](https://doi.org/10.22541/essoar.177170388.88002537/v1)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436835), reproducing the results and figures in the paper. 
+This repository contains the workflow presented in **[An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks to Assess Air Quality Mortality](https://doi.org/10.22541/essoar.177170388.88002537/v1)**. The aim is to allow users to apply the workflow directly to address specific research questions, modify individual components (for example, exposure metrics, epidemiological inputs, or scenarios) to suit their study design, or extend it to related applications. It can also be used as a tutorial to understand the framework using an [example dataset](https://doi.org/10.5281/zenodo.18436834), reproducing the results and figures in the paper. 
 
 **A. F. Wells**, J. W. Hurrell, E. Gilleland, & G. B. Anderson (2026).  
 An Open-Access Workflow Combining Climate Model Projections with Epidemiological Frameworks
@@ -27,7 +27,7 @@ cd AQ_mortality_workflow
 
 The input data required to run an example of the workflow are hosted on Zenodo:
 
-> Wells, A. F., Anderson, G. B., Hurrell, J. W., & Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18436835
+> Wells, A. F., Anderson, G. B., Hurrell, J. W.& Gilleland, E. (2026). Air Quality Mortality Workflow: Input Datasets (Version v1.1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21683157
 
 Download and extract the dataset. **The directory structure inside the archive should be preserved** — the scripts assume a specific layout and will not find inputs correctly if files are moved or reorganised. When a notebook calls a specific directory it runs a check to see if the file path exists and throws an error if it does not. More on the file path structure below.
 
