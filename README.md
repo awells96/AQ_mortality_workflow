@@ -67,6 +67,9 @@ Each script is designed to be run independently once its inputs are available. T
 
 If you are happy that you understand how the workflow operates, you can make your own edits. For example you can apply your own climate variable data or use different exposure functions.
 
+Examples of the workflow being used are as follows:
+Wells et al., 2026 [doi:....]
+
 ## Abstract
 
 Surface-level air pollution is a major contributor to human mortality worldwide, and future climate change is expected to alter concentrations of pollutants such as ozone and particulate matter. Estimating the health burden of these changes requires combining climate model projections with epidemiological frameworks, such as those developed in the Global Burden of Disease (GBD) study. However, significant barriers hinder this integration. Climate model outputs differ from health metrics in spatial resolution, temporal aggregation, and pollutant definitions. For example, GBD quantifies ozone exposure as the highest seasonal average of 8-hour daily maximum concentrations, while most climate models provide hourly or monthly mean data. Furthermore, model outputs often require bias correction and spatial downscaling to align with exposure-response functions derived from observational data.
