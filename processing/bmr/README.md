@@ -64,11 +64,24 @@ Metric: Number, Percent, Rate (use rate to calculate BMR - rate is given as x pe
 Cause(s):  
 - Chronic obstructive pulmonary disease (COPD)  
 - Lower Respiratory Infection (LOWER_RESPIRATORY_INFECTIONS)  
-- Type II Diabetes (DIABETES)  
+- Type II Diabetes (T2DIABETES)  
 - Ischemic Heart Disease (ISCHEMIC_HEART_DISEASE)  
 - Stroke (STROKE)  
 - Tracheal, bronchus, and lung cancer (LUNG_CANCER)
-- Alzheimer's disease and other dementias (DEMENTIA)  
+- Alzheimer's disease and other dementias (DEMENTIA)
+- Chronic kidney disease (CHRONIC_KIDNEY_DISEASE)
+- Cardiomyopathy and myocarditis (CARDIOMYOPATHY_MYOCARDITIS)
+- Hypertensive heart disease (HYPERTENSIVE_HEART_DISEASE)
+- Diabetes (both type 1 and 2) (DIABETES)
+- Animal contact (INJ_ANIMAL)
+- Exposure to forces of nature (INJ_DISASTER)
+- Drowning (DROWNING)
+- Interpersonal violence (HOMICIDE)
+- Exposure to mechanical forces (MECHANICAL_INJ)
+- Other unintentional injuries (OTHER_UNINTENTIONAL_INJ)
+- Self-harm (SUICIDE)
+- Other transport injuries (OTHER_TRANSPORT_INJ)
+- Road injuries (ROAD_TRANSPORT_INJ)
   
 Location: Select all countries and territories  
 Age: All ages  
