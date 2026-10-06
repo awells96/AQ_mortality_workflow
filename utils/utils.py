@@ -42,28 +42,10 @@ def require_dir(path, name=None):
 
 
 # === Change longitude values from 0-360 to -180-180 ===
-def adjust_longitude(dataset: xr.Dataset) -> xr.Dataset:
-    """
-    Swaps longitude coordinates from range (0, 360) to (-180, 180)
-    Args:
-        dataset (xr.Dataset): xarray Dataset
-    Returns:
-        xr.Dataset: xarray Dataset with swapped longitude dimensions
-    """
-    lon_name = "lon"  # whatever name is in the data
-
-    # Adjust lon values to make sure they are within (-180, 180)
-    dataset["_longitude_adjusted"] = xr.where(
-        dataset[lon_name] > 180, dataset[lon_name] - 360, dataset[lon_name])
-    dataset = (
-        dataset.swap_dims({lon_name: "_longitude_adjusted"})
-        .sel(**{"_longitude_adjusted": sorted(dataset._longitude_adjusted)})
-        .drop_vars(lon_name)
-    )
-
-    dataset = dataset.rename({"_longitude_adjusted": lon_name})
-    return dataset
-
+def adjust_longitude(da, lon_name="lon"):
+    """Relabel longitude from 0..360 to -180..179.75 and reorder the data to match."""
+    lon = ((da[lon_name] + 180) % 360) - 180
+    return da.assign_coords({lon_name: lon}).sortby(lon_name)
 
 # === Latitude weighting mean ===
 def lat_weighted_mean(da):
