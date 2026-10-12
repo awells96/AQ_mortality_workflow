@@ -106,6 +106,10 @@ _MODEL_CONFIG = {
             "ensemble_members": [1, 2, 3],
             "years": range(2020, 2084)
         },
+        "SSP245_LE": {
+            "ensemble_members": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            "years": range(2050, 2051)
+        },
         "hist": {
             "ensemble_members": [1],
             "years": range(1990, 2010)
